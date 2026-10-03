@@ -83,8 +83,8 @@ recall. Full breakdown, per-technique results and the matching rules used:
 Requires Python 3.10+.
 
 ```bash
-git clone <repository-url>
-cd vfde
+git clone https://github.com/gupta-ashwani/VFDE.git
+cd VFDE
 pip install -r requirements.txt
 
 streamlit run app.py              # detection console at http://localhost:8501
