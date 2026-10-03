@@ -151,15 +151,15 @@ def build_report(result, metrics=None, title="Incident Report"):
     eval_html = ""
     if metrics:
         r, v = metrics["raw"], metrics["verified"]
-        kpis.append(_kpi("FP reduction", f"{metrics['fp_reduction']:.0%}",
+        kpis.append(_kpi("FP reduction", f"{metrics['fp_reduction']:.2%}",
                          f"{r['fp']} -> {v['fp']} false positives"))
         eval_html = f"""
 <h2>Raw rules vs verification</h2>
 <div class="card">{_bars([("Alerts", r["alerts"], v["alerts"]),
                           ("False positives", r["fp"], v["fp"])])}
 <table style="margin-top:14px"><thead><tr><th>Metric</th><th>Raw rules</th><th>Verified</th></tr></thead><tbody>
-<tr><td>Alert precision</td><td>{r['precision']:.1%}</td><td>{v['precision']:.1%}</td></tr>
-<tr><td>Episode recall</td><td>{r['recall']:.1%}</td><td>{v['recall']:.1%}</td></tr>
+<tr><td>Alert precision</td><td>{r['precision']:.2%}</td><td>{v['precision']:.2%}</td></tr>
+<tr><td>Episode recall</td><td>{r['recall']:.2%}</td><td>{v['recall']:.2%}</td></tr>
 </tbody></table>
 <p class="note">Measured against a labelled synthetic dataset; a controlled benchmark, not real-world performance.</p></div>"""
 

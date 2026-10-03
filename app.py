@@ -305,8 +305,8 @@ sev_count = Counter(i.severity for i in incidents)
 suppressed = len(alerts) - len(kept)
 conf_n = sum(a.verdict == "Confirmed" for a in alerts)
 if metrics:
-    last = (f'<div class="kpi"><div class="l">Alert precision</div><div class="v">{metrics["verified"]["precision"]:.1%}</div>'
-            f'<div class="d good">from {metrics["raw"]["precision"]:.1%} raw · FP −{metrics["fp_reduction"]:.0%}</div></div>')
+    last = (f'<div class="kpi"><div class="l">Alert precision</div><div class="v">{metrics["verified"]["precision"]:.2%}</div>'
+            f'<div class="d good">from {metrics["raw"]["precision"]:.2%} raw · FP −{metrics["fp_reduction"]:.2%}</div></div>')
 else:
     last = '<div class="kpi"><div class="l">Alert precision</div><div class="v">—</div><div class="d">no ground truth loaded</div></div>'
 html('<div class="kpis">'
@@ -482,12 +482,12 @@ with tab_eval:
     else:
         r, v = metrics["raw"], metrics["verified"]
         html('<div class="kpis" style="grid-template-columns:repeat(4,1fr)">'
-             f'<div class="kpi"><div class="l">Precision</div><div class="v">{v["precision"]:.1%}</div>'
-             f'<div class="d">raw rules {r["precision"]:.1%}</div></div>'
-             f'<div class="kpi"><div class="l">Episode recall</div><div class="v">{v["recall"]:.0%}</div>'
-             f'<div class="d">raw rules {r["recall"]:.0%}</div></div>'
+             f'<div class="kpi"><div class="l">Precision</div><div class="v">{v["precision"]:.2%}</div>'
+             f'<div class="d">raw rules {r["precision"]:.2%}</div></div>'
+             f'<div class="kpi"><div class="l">Episode recall</div><div class="v">{v["recall"]:.2%}</div>'
+             f'<div class="d">raw rules {r["recall"]:.2%}</div></div>'
              f'<div class="kpi"><div class="l">False positives</div><div class="v">{r["fp"]} → {v["fp"]}</div>'
-             f'<div class="d good">−{metrics["fp_reduction"]:.1%}</div></div>'
+             f'<div class="d good">−{metrics["fp_reduction"]:.2%}</div></div>'
              f'<div class="kpi"><div class="l">Alerts per incident</div><div class="v">{metrics["alerts_per_incident"]:.1f}</div>'
              f'<div class="d">{metrics["episodes_in_incidents"]}/{metrics["episodes"]} episodes in an incident</div></div></div>')
         left, right = st.columns([1, 1], gap="medium")
