@@ -1,176 +1,199 @@
-# Verification-First Detection Engine (VFDE)
+# VFDE: Verification-First Detection Engine
 
-Defensive SOC-style log analysis: rule-based detection, an evidence-based
-verification layer that suppresses false positives, kill-chain correlation
-into incidents, MITRE ATT&CK and ISO 27001 / RBI CSF mapping, a Streamlit
-dashboard, an HTML/PDF incident report and a reproducible evaluation.
+A defensive log-analysis engine for SOC triage. VFDE detects suspicious activity
+in web and SSH authentication logs, **verifies each alert against evidence in
+the logs** to suppress false positives, and correlates what remains into
+kill-chain incidents mapped to MITRE ATT&CK.
 
-> All testing is performed on locally generated logs / an isolated local lab.
+![Detection console overview](docs/screenshots/overview.png)
 
-## Screenshots
+---
 
-<!-- Add after running `streamlit run app.py`:
-![Overview](docs/screenshots/overview.png)
-![Incident detail](docs/screenshots/incident.png)
--->
+## Why
+
+Rule-based detection is noisy. A search for `O'Brien` matches a SQL injection
+pattern; a user who mistypes a password five times looks like a brute-force
+attack; a browser requesting missing images looks like directory enumeration.
+Analysts spend most of their time dismissing alerts like these.
+
+VFDE treats a rule match as a *hypothesis*, not a finding. Every alert is
+checked against what the logs actually show (server response, timing, volume,
+outcome) and given a verdict with a written reason. Only alerts that survive
+verification reach the analyst, grouped into one incident per attacker.
+
+## Features
+
+- **Parsing**: nginx access logs (combined format, optional `$request_time`)
+  and Linux `auth.log` (sshd, sudo), with URL decoding and an unparsed-line count.
+- **Detection**: 9 configurable rules with sliding time windows, each mapped
+  to a MITRE ATT&CK technique. Thresholds and patterns live in `rules.yaml`.
+- **Verification**: four verdicts (`Confirmed`, `Likely`, `Attempted`,
+  `Noise`) with a confidence score and a human-readable reason for each alert.
+- **Correlation**: alerts from one source are joined into incidents spanning
+  Reconnaissance → Initial Access → Compromise → Post-Exploitation, with
+  severity escalation for multi-stage activity.
+- **Governance context**: each incident lists related ISO/IEC 27001:2022
+  Annex A controls and RBI Cyber Security Framework control areas, plus
+  prioritised response recommendations.
+- **Detection console**: Streamlit dashboard with an incident queue, incident
+  timelines, an alert explorer, coverage and evaluation views.
+- **Incident report**: self-contained HTML report, printable to PDF.
+- **Evaluation**: reproducible precision / recall / false-positive measurement
+  against labelled data.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    A[access.log<br/>auth.log] --> B[Parsers]
+    B --> C[Detection rules<br/>rules.yaml]
+    C -->|raw alerts| D[Verification layer]
+    D -->|verdict + reason| E[Kill-chain correlation]
+    E --> F[Detection console]
+    E --> G[Incident report]
+    D --> H[Evaluation]
+    T[ground_truth.csv] -.-> H
+```
+
+The verifier never reads the ground truth; only the evaluation does.
+
+## Results
+
+Measured on the bundled **labelled synthetic dataset** (3,434 events, 18
+labelled attack episodes, benign traffic that includes deliberate look-alikes):
+
+| Metric | Raw rules | After verification |
+|---|---|---|
+| Alerts | 162 | 59 |
+| False positives | 104 | 1 |
+| Alert precision | 35.8% | 98.3% |
+| Episode recall | 100% | 100% |
+| Incidents | n/a | 15 (3 multi-stage) |
+
+Five further synthetic seeds give a 98–100% false-positive reduction with full
+recall. Full breakdown, per-technique results and the matching rules used:
+[docs/results.md](docs/results.md).
+
+> These figures come from synthetic data generated alongside the verifier, so
+> they are a controlled benchmark rather than a measure of real-world
+> performance. Expect lower precision on production logs.
 
 ## Quick start
 
+Requires Python 3.10+.
+
 ```bash
+git clone <repository-url>
+cd vfde
 pip install -r requirements.txt
-python generators/synthetic_logs.py --out sample_logs --seed 7
-python cli.py analyze --logs sample_logs --year 2025
-pytest -q
+
+streamlit run app.py              # detection console at http://localhost:8501
 ```
 
-The generator writes `access.log`, `auth.log` and `ground_truth.csv`
-(simulated episodes from documentation-range IPs, plus benign traffic that
-includes tricky look-alikes such as a search for `O'Brien`).
-`cli.py analyze` prints raw alerts plus a baseline precision / recall report
-against the ground truth: this is the number Phase 3 must improve.
+The console loads `sample_logs/` by default. Switch to **Upload logs** in the
+sidebar to analyse your own files.
 
-## Layout
+![Upload view](docs/screenshots/upload.png)
 
-| Path | Purpose |
-|---|---|
-| `generators/synthetic_logs.py` | Labelled benign + simulated-suspicious log generator |
-| `lab/` | Optional Docker lab (nginx with custom log format, practice app, ssh) |
-| `vfde/parsers/` | nginx-format web parser, sshd/sudo auth parser |
-| `vfde/detections/engine.py` | 9 rules with sliding windows, MITRE-mapped |
-| `rules.yaml` | Thresholds, patterns, MITRE IDs |
-| `vfde/verification/` | Phase 3: baselines + per-rule verifiers (verdict, reason, confidence) |
-| `vfde/correlation/` | Phase 4: kill-chain incidents, severity, timelines |
-| `vfde/mapping/` | MITRE ATT&CK mapping + ISO 27001 / RBI CSF control mapping (YAML) |
-| `eval_baseline.py` | Raw-rule precision/recall, raw-vs-verified, incident-level report |
-| `vfde/pipeline.py` | One entry point (parse -> detect -> verify -> correlate) shared by CLI, eval, dashboard, report |
-| `eval.py` | Full evaluation, per-technique table, seed sweep -> `docs/results.md` |
-| `vfde/reporting/` | Self-contained HTML incident report (print to PDF) |
-| `app.py`, `.streamlit/` | Streamlit SOC dashboard and theme |
-| `tests/` | pytest: positive and negative case per rule and per verifier |
-
-## Detections (raw baseline)
-
-brute force (T1110), success after failures (T1078), 404 scanning (T1595),
-SQLi / XSS patterns (T1190), path traversal (T1083), scanner user-agent
-(T1595), off-hours login (T1078), sudo failures (T1068).
-
-## Phase 3: Verification layer
+## Command-line usage
 
 ```bash
-python cli.py analyze --logs sample_logs --year 2025 --verify --show
-```
+# Regenerate the labelled sample dataset
+python generators/synthetic_logs.py --out sample_logs --seed 7 --year 2025
 
-Each raw alert gets a verdict, a confidence score and a human-readable reason,
-using only log evidence (the ground truth is never read by the verifier):
+# Detect, verify and correlate; print incidents with timelines and controls
+python cli.py analyze --logs sample_logs --correlate --show
 
-| Verdict | Meaning |
-|---|---|
-| Confirmed | evidence shows success / impact (HTTP 5xx on injected input, slow time-based response, response far above clean baseline, login success after scripted guessing) |
-| Likely | strong signs of malicious activity, impact not proven |
-| Attempted | malicious-looking, no sign it worked |
-| Noise | matches a rule but behaves like legitimate traffic; suppressed |
+# Write the HTML incident report to reports/incident_report.html
+python cli.py report --logs sample_logs
 
-Key ideas: baselines built from clean (unflagged) IPs only; probe *bursts* per
-IP rather than single matches; human-paced single-user failures treated as
-typos; static-asset 404 bursts treated as a broken page; tool-like user-agents
-hitting one health endpoint treated as a monitor; and a **two-pass** design so
-an alert already judged Noise can never corroborate another alert.
-
-Result on the synthetic dataset (seed 7, 18 labelled episodes; seeds 1, 2, 3,
-11, 42 give 98-100% FP reduction with 100% episode recall):
-
-| | raw rules | verified |
-|---|---|---|
-| alerts | 162 | 59 |
-| false positives | 104 | 1 |
-| precision | 35.8% | 98.3% |
-| episode recall | 100% | 100% |
-
-**Read these numbers with care.** The dataset, its benign look-alikes and the
-verifier were all written by the same person, so this is a controlled
-benchmark, not evidence of real-world performance. Validate on logs from a real
-lab before claiming more. Known limits: reflected XSS cannot be confirmed from
-server logs (capped at Attempted); a legitimate request that happens to return
-HTTP 500 still survives as a false positive (the one remaining FP above).
-
-## Phase 4: Kill-chain correlation + MITRE / compliance mapping
-
-```bash
-python cli.py analyze --logs sample_logs --year 2025 --correlate --show
-```
-
-Verified alerts (never Noise) are grouped per source IP into **incidents**; a
-gap longer than `correlation.gap_seconds` starts a new incident. Each incident
-lists the kill-chain stages it spans (Reconnaissance -> Initial Access ->
-Compromise -> Post-Exploitation), MITRE ATT&CK techniques, related governance
-controls, a time-ordered alert timeline, and de-duplicated recommendations
-(most advanced stage first).
-
-Severity: strongest alert severity; capped at `attempted_only_severity_cap`
-when no alert is Confirmed/Likely; bumped one level when the incident spans 3+
-stages. All thresholds live in `rules.yaml`.
-
-| | seed 7 |
-|---|---|
-| raw alerts | 162 |
-| incidents | 15 (10.8 raw alerts per incident) |
-| labelled episodes covered | 18/18 |
-| false incidents | 1 (the HTTP-500 look-alike) |
-| multi-stage incidents | 3 |
-
-The generator includes two multi-stage attacker journeys (scan -> SQLi probes
--> credential guessing -> login) so correlation has real chains to join; the
-other episodes are single-technique.
-
-**Compliance mapping caveat.** `vfde/mapping/compliance.yaml` links each
-detection to ISO/IEC 27001:2022 Annex A controls and to RBI Cyber Security
-Framework control *areas by name only*. No RBI clause numbers are cited on
-purpose: verify them against the official RBI circular before quoting any
-number. The mapping shows what evidence the tool can support; it does not claim
-anyone is compliant.
-
-## Phase 5: Dashboard, incident report, evaluation
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py                                    # SOC dashboard
-python cli.py report --logs sample_logs                 # reports/incident_report.html
+# Full evaluation, including robustness across fresh synthetic seeds
 python eval.py --logs sample_logs --seeds 1 2 3 11 42 --write docs/results.md
 ```
 
-**Dashboard (`app.py`).** Violet / indigo / blue theme. Five tabs:
-Overview (alerts per hour raw vs verified, verdict mix per rule, top
-incidents), Incidents (kill-chain stepper, timeline with evidence-based
-reasons, MITRE, recommendations, ISO/RBI context), Alerts (filterable table,
-CSV export), Coverage (MITRE technique per rule), Evaluation (precision,
-recall, FP reduction, per-technique table). Logs can be uploaded; uploads are
-saved under `.uploads/` inside the project.
+## How verification works
 
-**Incident report.** Self-contained HTML (no JS, no external assets): executive
-summary, raw-vs-verified comparison, every incident with its kill chain,
-timeline, controls and fixes, plus method and limitations. Print -> Save as PDF
-gives a light, print-friendly PDF. All log-derived text is HTML-escaped (the
-evidence contains attack payloads).
+| Verdict | Meaning | Example evidence |
+|---|---|---|
+| **Confirmed** | Activity succeeded or had impact | HTTP 5xx on injected input; response far above the clean baseline; time-based delay; login success after scripted guessing |
+| **Likely** | Strong malicious signal, impact not proven | Repeated probes in a burst; scanner user-agent alongside enumeration |
+| **Attempted** | Malicious-looking, no sign it worked | Scripted password guessing with no successful login |
+| **Noise** | Matches a rule but behaves like legitimate traffic | Isolated look-alike query; human-paced typos for one user; 404 burst on static assets; health-check monitor |
 
-**Evaluation (`eval.py`).** Full results are in [docs/results.md](docs/results.md).
-Headline on seed 7: 162 raw alerts -> 59 verified, false positives 104 -> 1,
-precision 35.8% -> 98.3%, 18/18 episodes detected, 15 incidents. The script
-states its matching rules so they can be questioned.
+Design points:
 
-## Resume line (numbers from docs/results.md)
+- Response-size baselines are built only from sources that triggered no rule.
+- Pattern matches are judged as bursts per source, not single requests.
+- Verification runs in two passes so an alert already judged `Noise` can never
+  corroborate another alert.
+- Reflected XSS cannot be confirmed from server logs and is capped at `Attempted`.
 
-> Built a verification-first detection engine in Python that parses web and
-> SSH auth logs, detects 9 attack patterns mapped to MITRE ATT&CK, verifies
-> alerts against response-evidence baselines and correlates them into
-> kill-chain incidents; on a labelled synthetic dataset it cut false positives
-> by 99% (precision 36% -> 98%) with 100% episode recall, presented in a
-> Streamlit SOC dashboard with HTML/PDF incident reports and ISO 27001 /
-> RBI CSF control mapping.
+## Detection rules
 
-Keep the words "labelled synthetic dataset" unless you re-run on real lab logs.
+| Rule | Technique | Kill-chain stage |
+|---|---|---|
+| SSH brute force | T1110 Brute Force | Initial Access |
+| Login success after failures | T1078 Valid Accounts | Compromise |
+| 404 burst (enumeration) | T1595 Active Scanning | Reconnaissance |
+| Scanner user-agent | T1595 Active Scanning | Reconnaissance |
+| SQL injection pattern | T1190 Exploit Public-Facing Application | Initial Access |
+| XSS pattern | T1190 Exploit Public-Facing Application | Initial Access |
+| Path traversal | T1083 File and Directory Discovery | Initial Access |
+| Off-hours login | T1078 Valid Accounts | Compromise |
+| Repeated sudo failures | T1068 Exploitation for Privilege Escalation | Post-Exploitation |
 
-## Future work
+## Project structure
 
-Real-time mode (log tailing, sliding-window state, alert lifecycle), Sigma rule
-import, real lab validation with the `lab/` Docker setup, GeoIP / reputation
-enrichment.
+```
+vfde/
+├── app.py                    Streamlit detection console
+├── cli.py                    analyze / report commands
+├── eval.py                   evaluation and seed sweep
+├── rules.yaml                detection, verification and correlation settings
+├── vfde/
+│   ├── parsers/              nginx and auth.log parsers
+│   ├── detections/           rule engine
+│   ├── verification/         baselines and per-rule verifiers
+│   ├── correlation/          kill-chain incident builder
+│   ├── mapping/              MITRE ATT&CK and ISO 27001 / RBI CSF mappings
+│   ├── reporting/            HTML incident report
+│   └── pipeline.py           shared parse → detect → verify → correlate entry point
+├── generators/               labelled synthetic log generator
+├── sample_logs/              bundled dataset with ground truth
+├── lab/                      Docker lab configuration (experimental)
+├── docs/                     results and screenshots
+└── tests/                    unit and integration tests
+```
+
+## Testing
+
+```bash
+pytest -q
+```
+
+Tests cover the parsers, every detection rule (positive and negative cases),
+each verifier, correlation behaviour, the evaluation maths, and HTML escaping
+of log-derived content in the report.
+
+## Limitations
+
+- Batch analysis of log files; not a real-time SIEM.
+- Two log sources only (nginx access, Linux auth).
+- Validated on synthetic data; the Docker lab in `lab/` is experimental and
+  not yet used for validation.
+- The compliance mapping indicates which controls the evidence relates to. It
+  is not a compliance assessment. RBI CSF entries are control areas by name;
+  clause references should be checked against the official circular.
+
+## Roadmap
+
+- Validation on logs captured from the isolated Docker lab
+- Near-real-time mode: log tailing, streaming windows, alert lifecycle
+- Sigma rule import
+- IP reputation and GeoIP enrichment
+
+## Disclaimer
+
+For defensive and educational use. All testing was performed on locally
+generated logs; only run attack tooling against systems you own or are
+authorised to test.
