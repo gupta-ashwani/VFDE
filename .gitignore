@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Runtime output (regenerate with the CLI)
+.uploads/
+_eval_seeds/
+_seedcheck/
+reports/
+lab/logs/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

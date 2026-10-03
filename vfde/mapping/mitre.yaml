@@ -1,0 +1,56 @@
+# Rule -> MITRE ATT&CK technique, kill-chain stage and response recommendation.
+# Stage order is defined in correlation.stages (rules.yaml).
+brute_force:
+  technique: "T1110"
+  name: "Brute Force"
+  tactic: "Credential Access"
+  stage: "Initial Access"
+  recommendation: "Enforce account lockout / rate limiting on SSH, require key-based auth or MFA, block the source IP."
+success_after_failures:
+  technique: "T1078"
+  name: "Valid Accounts"
+  tactic: "Initial Access"
+  stage: "Compromise"
+  recommendation: "Treat the account as compromised: force password reset, revoke sessions and keys, review activity after the login."
+scan_404:
+  technique: "T1595"
+  name: "Active Scanning"
+  tactic: "Reconnaissance"
+  stage: "Reconnaissance"
+  recommendation: "Rate-limit and block the source, review which paths returned 200, and remove exposed admin/backup paths."
+scanner_user_agent:
+  technique: "T1595"
+  name: "Active Scanning"
+  tactic: "Reconnaissance"
+  stage: "Reconnaissance"
+  recommendation: "Block known scanner user-agents at the WAF and allowlist legitimate monitors explicitly."
+sqli_pattern:
+  technique: "T1190"
+  name: "Exploit Public-Facing Application"
+  tactic: "Initial Access"
+  stage: "Initial Access"
+  recommendation: "Use parameterised queries, enable a WAF rule for SQL injection, and review database logs for the affected endpoint."
+xss_pattern:
+  technique: "T1190"
+  name: "Exploit Public-Facing Application"
+  tactic: "Initial Access"
+  stage: "Initial Access"
+  recommendation: "Apply output encoding and a Content-Security-Policy, and validate input on the affected parameter."
+path_traversal:
+  technique: "T1083"
+  name: "File and Directory Discovery"
+  tactic: "Discovery"
+  stage: "Initial Access"
+  recommendation: "Canonicalise and validate file paths server-side, run the app with least privilege, and confirm no sensitive file was returned."
+off_hours_login:
+  technique: "T1078"
+  name: "Valid Accounts"
+  tactic: "Initial Access"
+  stage: "Compromise"
+  recommendation: "Confirm the login with the account owner; consider conditional-access rules for off-hours access."
+sudo_failures:
+  technique: "T1068"
+  name: "Exploitation for Privilege Escalation"
+  tactic: "Privilege Escalation"
+  stage: "Post-Exploitation"
+  recommendation: "Review sudoers configuration and the session that attempted escalation; rotate credentials if the user is not expected."

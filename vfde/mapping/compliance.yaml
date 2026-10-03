@@ -1,0 +1,43 @@
+# Which governance controls each detection capability supports.
+#
+# iso27001_2022: Annex A control IDs/titles (ISO/IEC 27001:2022).
+# rbi_csf_areas: control AREAS from the RBI Cyber Security Framework in Banks,
+#   given by name only. Exact annex/clause numbers are deliberately NOT cited
+#   here: verify them against the official RBI circular before putting any
+#   number in a report or on a CV.
+#
+# This maps what the TOOL helps evidence; it is not a statement that an
+# organisation is compliant.
+brute_force:
+  iso27001_2022: ["A.8.5 Secure authentication", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["User access control / management", "Authentication framework", "Continuous surveillance"]
+success_after_failures:
+  iso27001_2022: ["A.8.5 Secure authentication", "A.5.25 Assessment and decision on information security events", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["Authentication framework", "Incident response and management", "Continuous surveillance"]
+scan_404:
+  iso27001_2022: ["A.8.16 Monitoring activities", "A.8.20 Networks security"]
+  rbi_csf_areas: ["Network management and security", "Continuous surveillance"]
+scanner_user_agent:
+  iso27001_2022: ["A.8.16 Monitoring activities", "A.8.20 Networks security"]
+  rbi_csf_areas: ["Network management and security", "Continuous surveillance"]
+sqli_pattern:
+  iso27001_2022: ["A.8.26 Application security requirements", "A.8.28 Secure coding", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["Application security life cycle", "Vulnerability assessment and penetration testing", "Continuous surveillance"]
+xss_pattern:
+  iso27001_2022: ["A.8.26 Application security requirements", "A.8.28 Secure coding", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["Application security life cycle", "Continuous surveillance"]
+path_traversal:
+  iso27001_2022: ["A.8.26 Application security requirements", "A.8.3 Information access restriction", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["Application security life cycle", "Secure configuration"]
+off_hours_login:
+  iso27001_2022: ["A.5.15 Access control", "A.8.15 Logging", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["User access control / management", "Continuous surveillance"]
+sudo_failures:
+  iso27001_2022: ["A.8.2 Privileged access rights", "A.8.15 Logging"]
+  rbi_csf_areas: ["User access control / management", "Incident response and management"]
+# Incident-level controls, attached to every correlated incident:
+incident:
+  iso27001_2022: ["A.5.24 Information security incident management planning and preparation",
+                  "A.5.25 Assessment and decision on information security events",
+                  "A.5.26 Response to information security incidents"]
+  rbi_csf_areas: ["Incident response and management"]

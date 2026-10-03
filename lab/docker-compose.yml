@@ -1,0 +1,32 @@
+# Local, isolated practice lab. Nothing is published beyond localhost.
+# Start:  docker compose up -d      Stop:  docker compose down
+services:
+  dvwa:                       # intentionally vulnerable practice app
+    image: vulnerables/web-dvwa
+    networks: [labnet]
+
+  proxy:
+    image: nginx:stable
+    ports:
+      - "127.0.0.1:8080:80"   # reachable from this machine only
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./logs:/var/log/nginx
+    depends_on: [dvwa]
+    networks: [labnet]
+
+  ssh:
+    image: linuxserver/openssh-server
+    environment:
+      - PASSWORD_ACCESS=true
+      - USER_NAME=deploy
+      - USER_PASSWORD=change-me-lab-only
+      - LOG_STDOUT=true
+    ports:
+      - "127.0.0.1:2222:2222"
+    networks: [labnet]
+
+networks:
+  labnet:
+    driver: bridge
+    internal: false

@@ -1,0 +1,6 @@
+PyYAML>=6.0
+pytest>=8.0
+# Dashboard (Phase 5). The CLI, eval.py and the HTML report need only PyYAML.
+streamlit>=1.35
+plotly>=5.19
+pandas>=2.0

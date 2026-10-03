@@ -1,0 +1,101 @@
+# Thresholds, patterns and MITRE IDs live here, not in code.
+# Tune these against your labelled dataset (Phase 5: eval.py).
+
+# ---- Phase 4: kill-chain correlation ----
+correlation:
+  gap_seconds: 1800                # alerts from one IP further apart than this = separate incidents
+  include_verdicts: [Confirmed, Likely, Attempted]   # Noise is never correlated
+  stages: [Reconnaissance, Initial Access, Compromise, Post-Exploitation]   # kill-chain order
+  attempted_only_severity_cap: Medium   # an incident with no Confirmed/Likely alert never exceeds this
+  multi_stage_bump_at: 3           # incidents spanning >= this many stages get one severity level up
+
+# ---- Phase 3: verification layer ----
+verification:
+  cluster_window_seconds: 120      # pattern alerts from one IP this close = one probing burst
+  cluster_attempted: 2             # >= this many probes in a burst  -> at least Attempted
+  cluster_likely: 3                # >= this many probes in a burst  -> Likely
+  impact_status: 500               # server error on injected input = impact evidence
+  impact_rt_seconds: 3.0           # response this slow = time-based injection evidence
+  impact_size_multiplier: 1.25     # response bigger than baseline p95 * this = data-leak evidence
+  baseline_min_samples: 20         # per-path baseline needs this many clean samples, else global
+  baseline_size_percentile: 95
+  automated_interval_seconds: 3.0  # failures spaced tighter than this look scripted
+  min_distinct_users: 3            # password spraying / username guessing
+  max_user_typo_failures: 8        # one valid user failing a few times then succeeding = typo
+  static_extensions: [".png", ".jpg", ".jpeg", ".gif", ".svg", ".css", ".js", ".ico", ".woff", ".woff2", ".map"]
+  healthcheck_max_paths: 2         # tool-like UA touching <= this many paths, no errors = monitor
+
+brute_force:
+  enabled: true
+  threshold: 5            # failed logins from one IP ...
+  window_seconds: 60      # ... inside this window
+  severity: High
+  mitre: T1110
+  cooldown_seconds: 300   # one alert per IP per cooldown
+
+success_after_failures:
+  enabled: true
+  min_failures: 3
+  window_seconds: 300
+  severity: Critical
+  mitre: T1078
+
+scan_404:
+  enabled: true
+  threshold: 15           # 404 responses from one IP ...
+  window_seconds: 30
+  severity: Medium
+  mitre: T1595
+  cooldown_seconds: 300
+
+sqli_pattern:
+  enabled: true
+  severity: High
+  mitre: T1190
+  patterns:
+    - "(?i)\\bunion\\b\\s+(all\\s+)?\\bselect\\b"
+    - "(?i)'\\s*or\\s*'?\\d+'?\\s*=\\s*'?\\d+"
+    - "(?i)\\bor\\b\\s+\\d+\\s*=\\s*\\d+"
+    - "(?i)(sleep|benchmark|pg_sleep)\\s*\\("
+    - "(?i)information_schema"
+    - "(?i)'\\s*;\\s*(drop|insert|update|delete)\\b"
+    - "(?i)--\\s*$"
+
+xss_pattern:
+  enabled: true
+  severity: Medium
+  mitre: T1190
+  patterns:
+    - "(?i)<\\s*script\\b"
+    - "(?i)\\bon(error|load|mouseover|focus)\\s*="
+    - "(?i)javascript\\s*:"
+
+path_traversal:
+  enabled: true
+  severity: High
+  mitre: T1083
+  patterns:
+    - "(\\.\\./){2,}"
+    - "(?i)/etc/(passwd|shadow)"
+    - "(?i)\\bwin\\.ini\\b"
+
+scanner_user_agent:
+  enabled: true
+  severity: Medium
+  mitre: T1595
+  agents: [sqlmap, nikto, nmap, gobuster, ffuf, dirbuster, wpscan, masscan, nuclei]
+  cooldown_seconds: 300
+
+off_hours_login:
+  enabled: true
+  severity: Low
+  mitre: T1078
+  start_hour: 0           # UTC, inclusive
+  end_hour: 5             # UTC, exclusive
+
+sudo_failures:
+  enabled: true
+  threshold: 3
+  window_seconds: 300
+  severity: High
+  mitre: T1068
