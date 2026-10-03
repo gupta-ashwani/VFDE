@@ -65,6 +65,56 @@ def detect_scan_404(events, rule):
                     f"{len(ev)} HTTP 404 responses within {rule['window_seconds']}s", ev)
 
 
+def detect_slow_brute_force(events, rule):
+    """Low-and-slow guessing: no short burst ever forms, but one IP keeps failing against
+    many different usernames across a long window. Needs BOTH volume and username spread,
+    so one user who keeps mistyping their own password never fires it."""
+    window = timedelta(seconds=rule["window_seconds"])
+    cooldown = timedelta(seconds=rule.get("cooldown_seconds", 0))
+    buckets, last = defaultdict(deque), {}
+    for ev in events:
+        if ev.source != "auth" or ev.action != "failed_login":
+            continue
+        dq = buckets[ev.src_ip]
+        dq.append(ev)
+        while dq and ev.ts - dq[0].ts > window:
+            dq.popleft()
+        users = {e.user for e in dq}
+        if len(dq) >= rule["min_failures"] and len(users) >= rule["min_distinct_users"]:
+            prev = last.get(ev.src_ip)
+            if prev is None or ev.ts - prev >= cooldown:
+                last[ev.src_ip] = ev.ts
+                yield Alert("slow_brute_force", ev.ts, ev.src_ip, _sev(rule), rule["mitre"],
+                            f"{len(dq)} failed logins against {len(users)} usernames within "
+                            f"{rule['window_seconds'] // 60} min", [e.raw for e in dq])
+
+
+def detect_sensitive_paths(events, rule):
+    """Sweep of DISTINCT sensitive paths that were refused or missing (not served)."""
+    compiled = [re.compile(p) for p in rule["patterns"]]
+    statuses = set(rule["statuses"])
+    window = timedelta(seconds=rule["window_seconds"])
+    cooldown = timedelta(seconds=rule.get("cooldown_seconds", 0))
+    buckets, last = defaultdict(deque), {}
+    for ev in events:
+        if ev.source != "web" or ev.status not in statuses:
+            continue
+        if not any(rx.search(ev.path or "") for rx in compiled):
+            continue
+        dq = buckets[ev.src_ip]
+        dq.append(ev)
+        while dq and ev.ts - dq[0].ts > window:
+            dq.popleft()
+        paths = {e.path for e in dq}
+        if len(paths) >= rule["min_paths"]:
+            prev = last.get(ev.src_ip)
+            if prev is None or ev.ts - prev >= cooldown:
+                last[ev.src_ip] = ev.ts
+                yield Alert("sensitive_path_probe", ev.ts, ev.src_ip, _sev(rule), rule["mitre"],
+                            f"{len(paths)} distinct sensitive paths refused/missing within "
+                            f"{rule['window_seconds']}s", [e.raw for e in dq])
+
+
 def detect_sudo_failures(events, rule):
     for ts, ip, ev in _windowed(
         events,
@@ -153,8 +203,10 @@ def detect_off_hours(events, rule):
 
 DETECTORS = {
     "brute_force": detect_brute_force,
+    "slow_brute_force": detect_slow_brute_force,
     "success_after_failures": detect_success_after_failures,
     "scan_404": detect_scan_404,
+    "sensitive_path_probe": detect_sensitive_paths,
     "sqli_pattern": detect_sqli,
     "xss_pattern": detect_xss,
     "path_traversal": detect_traversal,

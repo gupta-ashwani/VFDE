@@ -6,13 +6,9 @@ An episode is DETECTED if at least one alert came from its IP.
 Phase 5's eval.py will extend this with per-technique metrics and compare
 against the verified alerts.
 """
-import csv
 from collections import Counter
 
-
-def load_truth(path):
-    with open(path, encoding="utf-8") as fh:
-        return list(csv.DictReader(fh))
+from vfde.truth import load_truth  # tolerant loader shared with eval.py
 
 
 def baseline_report(alerts, truth_path):

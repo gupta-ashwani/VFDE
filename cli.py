@@ -9,11 +9,13 @@ import sys
 from collections import Counter
 
 from vfde.detections import load_rules, run_detections
-from vfde.pipeline import load_events
+from vfde.pipeline import apply_dataset_context, load_events
 
 
 def cmd_analyze(args):
     rules = load_rules(args.rules)
+    if not args.no_allowlist:
+        apply_dataset_context(rules, args.logs, log=print)
     events, _ = load_events(args.logs, args.year)
     alerts = run_detections(events, rules)
     args.verify = args.verify or args.correlate     # correlation needs verdicts
@@ -94,6 +96,8 @@ def main():
     an.add_argument("--rules", default="rules.yaml")
     an.add_argument("--year", type=int, default=2025)
     an.add_argument("--json")
+    an.add_argument("--no-allowlist", action="store_true",
+                    help="ignore <logs>/allowlist.yaml (see how the tool behaves without operator context)")
     an.add_argument("--verify", action="store_true", help="run the verification layer")
     an.add_argument("--correlate", action="store_true",
                     help="group verified alerts into kill-chain incidents (implies --verify)")

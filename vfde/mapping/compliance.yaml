@@ -35,6 +35,12 @@ off_hours_login:
 sudo_failures:
   iso27001_2022: ["A.8.2 Privileged access rights", "A.8.15 Logging"]
   rbi_csf_areas: ["User access control / management", "Incident response and management"]
+slow_brute_force:
+  iso27001_2022: ["A.8.5 Secure authentication", "A.8.16 Monitoring activities"]
+  rbi_csf_areas: ["User access control / management", "Authentication framework", "Continuous surveillance"]
+sensitive_path_probe:
+  iso27001_2022: ["A.8.16 Monitoring activities", "A.8.9 Configuration management", "A.8.20 Networks security"]
+  rbi_csf_areas: ["Network management and security", "Secure configuration", "Continuous surveillance"]
 # Incident-level controls, attached to every correlated incident:
 incident:
   iso27001_2022: ["A.5.24 Information security incident management planning and preparation",

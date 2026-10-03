@@ -1,0 +1,9 @@
+src_ip,description,start,end
+203.0.113.42,uptime monitor hitting /health every 60s with tool-like UA,2025-03-14T00:00:00Z,2025-03-15T23:59:00Z
+203.0.113.66,search-engine crawler requesting many stale/missing URLs (404 storm),2025-03-14T02:11:00Z,2025-03-14T02:27:39Z
+10.0.1.33,valid user fat-fingers password a few times then logs in (not brute force),2025-03-14T09:14:05Z,2025-03-14T09:14:28Z
+203.0.113.77,"legit searches containing SQL/HTML-looking tokens (apostrophes, 'select','union','--',angle brackets)",2025-03-14T10:03:00Z,2025-03-14T10:18:27Z
+203.0.113.88,single page load with a burst of 404s for missing product images,2025-03-14T14:22:00Z,2025-03-14T14:22:01Z
+203.0.113.99,application-side 500 errors and a slow response on /checkout (not an attack),2025-03-14T20:41:00Z,2025-03-14T20:41:15Z
+10.0.2.9,on-call admin logs in at 03:17 with a valid SSH key (benign odd-hour access),2025-03-15T03:17:00Z,2025-03-15T03:35:00Z
+10.10.0.5,authorized internal vulnerability scan (dir enumeration + injection/traversal probes) run by the site owner,2025-03-15T05:00:00Z,2025-03-15T05:00:58Z

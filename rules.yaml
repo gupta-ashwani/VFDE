@@ -1,6 +1,15 @@
 # Thresholds, patterns and MITRE IDs live here, not in code.
 # Tune these against your labelled dataset (Phase 5: eval.py).
 
+# ---- Operator context: sources that are known and authorised ----
+# Alerts from these sources are kept in the raw list but judged Noise with the stated
+# reason, so the decision stays auditable. A dataset can also ship its own
+# <log_dir>/allowlist.yaml (same format) which is merged in at run time.
+# allowlist:
+#   - {source: "10.10.0.5", reason: "authorised internal vulnerability scanner"}
+#   - {source: "10.20.0.0/24", reason: "monitoring subnet"}
+allowlist: []
+
 # ---- Phase 4: kill-chain correlation ----
 correlation:
   gap_seconds: 1800                # alerts from one IP further apart than this = separate incidents
@@ -24,6 +33,16 @@ verification:
   max_user_typo_failures: 8        # one valid user failing a few times then succeeding = typo
   static_extensions: [".png", ".jpg", ".jpeg", ".gif", ".svg", ".css", ".js", ".ico", ".woff", ".woff2", ".map"]
   healthcheck_max_paths: 2         # tool-like UA touching <= this many paths, no errors = monitor
+  login_success_lookahead_seconds: 3600   # a login from the same IP this soon after guessing = Confirmed
+  sensitive_likely_paths: 5        # >= this many distinct sensitive paths probed = Likely
+  # A single XSS-looking string is Noise (people discuss markup), unless it carries an
+  # executable payload: calls, cookie access, event handlers, javascript: URLs.
+  xss_executable_patterns:
+    - '(?i)\b(alert|prompt|confirm|eval)\s*\('
+    - '(?i)document\.(cookie|location|write)'
+    - '(?i)\bon(error|load|mouseover|focus)\s*='
+    - '(?i)javascript\s*:'
+    - '(?i)string\.fromcharcode'
 
 brute_force:
   enabled: true
@@ -32,6 +51,17 @@ brute_force:
   severity: High
   mitre: T1110
   cooldown_seconds: 300   # one alert per IP per cooldown
+
+# Slow / low-and-slow guessing: no 60-second burst ever forms, but one IP keeps failing
+# against many different usernames over a long window.
+slow_brute_force:
+  enabled: true
+  min_failures: 6
+  min_distinct_users: 4
+  window_seconds: 3600
+  severity: High
+  mitre: T1110
+  cooldown_seconds: 1800
 
 success_after_failures:
   enabled: true
@@ -47,6 +77,27 @@ scan_404:
   severity: Medium
   mitre: T1595
   cooldown_seconds: 300
+
+# Requests for paths real users rarely ask for (VCS folders, env/backup files, admin
+# panels, server-status...) that come back 3xx/4xx. Counts DISTINCT paths, so a few
+# misses are fine but a sweep is not. Successful (200) hits are not counted: that is
+# how a legitimate admin looks.
+sensitive_path_probe:
+  enabled: true
+  min_paths: 3
+  window_seconds: 300
+  statuses: [301, 302, 401, 403, 404]
+  severity: Medium
+  mitre: T1595
+  cooldown_seconds: 300
+  patterns:
+    - '(?i)/\.(git|svn|hg|env|htaccess|htpasswd|ds_store)\b'
+    - '(?i)/(wp-admin|wp-login|wp-config|phpmyadmin|pma|administrator|admin|manager|console|actuator)(/|\.|$)'
+    - '(?i)/(backup|backups|old|bak|dump|db|sql)(/|\.|$)'
+    - '(?i)\.(bak|old|sql|zip|tar|tgz|gz|rar|swp|orig)$'
+    - '(?i)/(phpinfo|server-status|server-info)(\.php)?$'
+    - '(?i)/(config|configuration|settings|web)\.(php|json|yml|yaml|xml|inc|conf)$'
+    - '(?i)/cgi-bin/'
 
 sqli_pattern:
   enabled: true
@@ -83,7 +134,8 @@ scanner_user_agent:
   enabled: true
   severity: Medium
   mitre: T1595
-  agents: [sqlmap, nikto, nmap, gobuster, ffuf, dirbuster, wpscan, masscan, nuclei]
+  agents: [sqlmap, nikto, nmap, gobuster, ffuf, dirbuster, dirb, feroxbuster, wfuzz, wpscan, masscan,
+           nuclei, acunetix, nessus, openvas, arachni, w3af, skipfish, whatweb, zgrab]
   cooldown_seconds: 300
 
 off_hours_login:

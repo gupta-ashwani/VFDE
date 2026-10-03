@@ -1,0 +1,32 @@
+src_ip,technique,start,end,notes
+198.51.100.11,ssh_password_guessing,2025-03-14T01:12:00Z,2025-03-14T01:12:54Z,succeeded after 23 failures
+198.51.100.21,dir_enumeration,2025-03-14T03:20:00Z,2025-03-14T03:21:53Z,"fast content-discovery scan, scanner UA"
+198.51.100.12,ssh_password_guessing,2025-03-14T04:05:00Z,2025-03-14T04:06:48Z,"fast scripted burst, never succeeded"
+198.51.100.31,injection_probe,2025-03-14T05:33:00Z,2025-03-14T05:33:29Z,SQLi probes produced a 500 and a slow/large response (likely effective)
+198.51.100.13,ssh_password_guessing,2025-03-14T06:00:00Z,2025-03-14T07:03:05Z,"slow-and-low over ~90 min, never succeeded"
+198.51.100.41,traversal_probe,2025-03-14T07:48:00Z,2025-03-14T07:48:20Z,"path traversal to /etc/passwd, one response looked successful"
+198.51.100.22,dir_enumeration,2025-03-14T08:47:00Z,2025-03-14T08:49:23Z,admin/config path probing with an ordinary browser UA
+198.51.100.51,xss_probe,2025-03-14T09:36:00Z,2025-03-14T09:36:41Z,reflected <script> payloads in search
+192.0.2.101,dir_enumeration,2025-03-14T11:05:00Z,2025-03-14T11:05:43Z,multi_stage: stage 1/3 recon (shared IP with e_msA_*)
+192.0.2.101,injection_probe,2025-03-14T11:14:00Z,2025-03-14T11:14:48Z,multi_stage: stage 2/3 probing (shared IP with e_msA_*)
+192.0.2.101,ssh_password_guessing,2025-03-14T11:37:00Z,2025-03-14T11:37:36Z,"multi_stage: stage 3/3 ssh guessing, logged in (chain completed)"
+198.51.100.32,injection_probe,2025-03-14T12:10:00Z,2025-03-14T12:10:37Z,SQLi probes returned normal responses (ineffective)
+192.0.2.21,dir_enumeration,2025-03-14T13:02:00Z,2025-03-14T13:03:36Z,nmap http enumeration
+192.0.2.41,traversal_probe,2025-03-14T15:27:00Z,2025-03-14T15:27:27Z,"URL-encoded traversal, blocked (403/404)"
+198.51.100.14,ssh_password_guessing,2025-03-14T16:30:00Z,2025-03-14T17:35:03Z,"slow-and-low, eventually succeeded"
+192.0.2.31,injection_probe,2025-03-14T18:40:00Z,2025-03-14T18:41:18Z,"UNION/time-based probes, rotates UA and pauses between bursts"
+198.51.100.23,dir_enumeration,2025-03-14T19:55:00Z,2025-03-14T19:55:02Z,half-hearted: two missing paths then stopped
+192.0.2.51,xss_probe,2025-03-14T21:14:00Z,2025-03-14T21:15:31Z,img/svg event-handler payloads mixed into ordinary browsing
+198.51.100.15,ssh_password_guessing,2025-03-14T22:09:00Z,2025-03-14T22:10:12Z,"invalid-user sweep only, never succeeded"
+192.0.2.102,dir_enumeration,2025-03-15T01:20:00Z,2025-03-15T01:20:43Z,multi_stage: stage 1/3 recon (shared IP with e_msB_*)
+192.0.2.102,xss_probe,2025-03-15T01:46:00Z,2025-03-15T01:46:23Z,multi_stage: stage 2/3 xss probing (shared IP with e_msB_*)
+192.0.2.102,ssh_password_guessing,2025-03-15T02:02:00Z,2025-03-15T02:02:53Z,"multi_stage: stage 3/3 ssh guessing, never succeeded (chain stalled)"
+192.0.2.11,ssh_password_guessing,2025-03-15T02:40:00Z,2025-03-15T02:40:47Z,"targeted guessing of valid user deploy, succeeded"
+198.51.100.42,traversal_probe,2025-03-15T04:12:00Z,2025-03-15T04:12:25Z,"small traversal attempt, all 404"
+198.51.100.24,dir_enumeration,2025-03-15T06:18:00Z,2025-03-15T06:19:31Z,wordlist scan returning mostly 404/403
+198.51.100.52,xss_probe,2025-03-15T07:50:00Z,2025-03-15T07:50:00Z,single XSS probe then nothing (half-hearted)
+198.51.100.33,injection_probe,2025-03-15T09:02:00Z,2025-03-15T09:02:00Z,single probe then nothing (half-hearted)
+198.51.100.16,ssh_password_guessing,2025-03-15T11:03:00Z,2025-03-15T11:42:34Z,"half-hearted slow attempts, abandoned"
+198.51.100.111,dir_enumeration,2025-03-15T14:40:00Z,2025-03-15T14:46:40Z,"multi_stage: stage 1/3 recon, scanner UA (shared IP with e_msC_*)"
+198.51.100.111,traversal_probe,2025-03-15T15:20:00Z,2025-03-15T15:20:16Z,multi_stage: stage 2/3 traversal probing (shared IP with e_msC_*)
+198.51.100.111,ssh_password_guessing,2025-03-15T15:53:00Z,2025-03-15T16:54:55Z,"multi_stage: stage 3/3 slow ssh guessing, logged in (chain completed)"

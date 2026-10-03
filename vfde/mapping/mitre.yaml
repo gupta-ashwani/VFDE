@@ -54,3 +54,15 @@ sudo_failures:
   tactic: "Privilege Escalation"
   stage: "Post-Exploitation"
   recommendation: "Review sudoers configuration and the session that attempted escalation; rotate credentials if the user is not expected."
+slow_brute_force:
+  technique: "T1110"
+  name: "Brute Force"
+  tactic: "Credential Access"
+  stage: "Initial Access"
+  recommendation: "Alert on failures per source over long windows, not only bursts; enforce key-based auth or MFA, rate-limit and block the source, and review accounts that were targeted."
+sensitive_path_probe:
+  technique: "T1595"
+  name: "Active Scanning"
+  tactic: "Reconnaissance"
+  stage: "Reconnaissance"
+  recommendation: "Confirm none of the probed paths (VCS folders, backups, admin panels, config files) is reachable, remove them from the web root, and block or rate-limit the source."

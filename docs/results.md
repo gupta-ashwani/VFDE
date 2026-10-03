@@ -1,19 +1,21 @@
 # Evaluation results
 
-Dataset: `sample_logs` (3434 events, 18 labelled episodes). Synthetic, labelled data: a controlled benchmark, not real-world performance.
+Dataset: `sample_logs` (3434 events, 18 labelled episodes). Matching mode: `rules`. Labelled data (synthetic unless stated otherwise): a controlled benchmark, not real-world performance.
+
+No operator allowlist applied.
 
 ## Raw rules vs verified alerts
 
 | Metric | Raw rules | Verified |
 |---|---|---|
-| Alerts | 162 | 59 |
+| Alerts | 167 | 64 |
 | False positives | 104 | 1 |
-| Alert precision | 35.8% | 98.3% |
+| Alert precision | 37.7% | 98.4% |
 | Episode recall | 100.0% | 100.0% |
-| F1 (alert precision x episode recall) | 52.7% | 99.1% |
+| F1 (alert precision x episode recall) | 54.8% | 99.2% |
 
 - False-positive reduction: **99.0%**
-- Alert volume reduction: **63.6%**
+- Alert volume reduction: **61.7%**
 - Precision of `Confirmed` alerts: 100.0%
 - Median time to detect (verified): 0s
 
@@ -29,7 +31,7 @@ Dataset: `sample_logs` (3434 events, 18 labelled episodes). Synthetic, labelled 
 
 ## Incidents
 
-- 162 raw alerts -> **15 incidents** (10.8 raw alerts per incident)
+- 167 raw alerts -> **15 incidents** (11.1 raw alerts per incident)
 - Labelled episodes inside an incident: 18/18
 - False incidents: 1
 - Multi-stage incidents: 3
@@ -38,15 +40,16 @@ Dataset: `sample_logs` (3434 events, 18 labelled episodes). Synthetic, labelled 
 
 | Seed | Raw precision | Verified precision | Recall | FP reduction | False incidents |
 |---|---|---|---|---|---|
-| 1 | 40.4% | 100.0% | 100.0% | 100.0% | 0 |
-| 2 | 38.3% | 100.0% | 100.0% | 100.0% | 0 |
-| 3 | 38.9% | 100.0% | 100.0% | 100.0% | 0 |
-| 11 | 38.2% | 100.0% | 100.0% | 100.0% | 0 |
-| 42 | 35.8% | 96.9% | 100.0% | 98.2% | 2 |
+| 1 | 42.0% | 100.0% | 100.0% | 100.0% | 0 |
+| 2 | 40.1% | 100.0% | 100.0% | 100.0% | 0 |
+| 3 | 40.7% | 100.0% | 100.0% | 100.0% | 0 |
+| 11 | 40.0% | 100.0% | 100.0% | 100.0% | 0 |
+| 42 | 37.6% | 97.1% | 100.0% | 98.2% | 2 |
 
 ## How these numbers are computed
 
 - Alert = true positive if its source IP belongs to a labelled episode.
 - Episode detected = a non-Noise alert of one of its expected rules from its IP, between start-5s and end+10min.
+- Time to detect is measured in log time (batch analysis): it shows how far into an episode the first verified alert lands, not wall-clock latency. Pattern rules fire on the first matching request, hence 0s; brute force needs N failures first.
 - The verifier never reads the ground truth; only this script does.
-- Generator, look-alike benign traffic and verifier were written together, so expect lower numbers on real logs.
+- Labels are written by the dataset's author. A dataset produced together with the verifier shares its assumptions, so expect lower numbers on real logs.

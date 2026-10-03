@@ -1,0 +1,4 @@
+# Operator context for this dataset: sources that are known and authorised.
+# Taken from benign_gotchas.csv ("authorized internal vulnerability scan ... run by the site owner").
+allowlist:
+  - {source: "10.10.0.5", reason: "authorised internal vulnerability scanner (site owner)"}

@@ -1,0 +1,903 @@
+Mar 14 00:02:00 web01 CRON[1016]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 00:02:01 web01 CRON[1023]: pam_unix(cron:session): session closed for user root
+Mar 14 00:21:06 web01 sshd[4398]: Connection closed by 203.0.113.29 port 58243 [preauth]
+Mar 14 00:32:00 web01 CRON[1025]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 00:32:01 web01 CRON[1026]: pam_unix(cron:session): session closed for user root
+Mar 14 01:02:00 web01 CRON[1029]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 01:02:01 web01 CRON[1030]: pam_unix(cron:session): session closed for user root
+Mar 14 01:12:00 web01 sshd[5422]: Invalid user www from 198.51.100.11 port 3518
+Mar 14 01:12:00 web01 sshd[5422]: Failed password for invalid user www from 198.51.100.11 port 3518 ssh2
+Mar 14 01:12:00 web01 sshd[5422]: Connection closed by invalid user www 198.51.100.11 port 3518 [preauth]
+Mar 14 01:12:04 web01 sshd[5806]: Invalid user admin from 198.51.100.11 port 13818
+Mar 14 01:12:04 web01 sshd[5806]: Failed password for invalid user admin from 198.51.100.11 port 13818 ssh2
+Mar 14 01:12:06 web01 sshd[5809]: Invalid user ubuntu from 198.51.100.11 port 6629
+Mar 14 01:12:06 web01 sshd[5809]: Failed password for invalid user ubuntu from 198.51.100.11 port 6629 ssh2
+Mar 14 01:12:07 web01 sshd[4119]: Accepted publickey for alice from 10.0.4.165 port 47211 ssh2: ED25519 SHA256:BYWqq0K30azCMwuqvb7t2ayY2+TH9M4es+9brb0uhT+
+Mar 14 01:12:08 web01 sshd[4119]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 14 01:12:08 web01 systemd-logind[811]: New session 2222 of user alice.
+Mar 14 01:12:10 web01 sshd[5817]: Invalid user nagios from 198.51.100.11 port 9241
+Mar 14 01:12:10 web01 sshd[5817]: Failed password for invalid user nagios from 198.51.100.11 port 9241 ssh2
+Mar 14 01:12:11 web01 sshd[5824]: Invalid user ubuntu from 198.51.100.11 port 64699
+Mar 14 01:12:11 web01 sshd[5824]: Failed password for invalid user ubuntu from 198.51.100.11 port 64699 ssh2
+Mar 14 01:12:12 web01 sshd[5832]: Invalid user git from 198.51.100.11 port 3593
+Mar 14 01:12:12 web01 sshd[5832]: Failed password for invalid user git from 198.51.100.11 port 3593 ssh2
+Mar 14 01:12:15 web01 sshd[5833]: Invalid user www from 198.51.100.11 port 8821
+Mar 14 01:12:15 web01 sshd[5833]: Failed password for invalid user www from 198.51.100.11 port 8821 ssh2
+Mar 14 01:12:17 web01 sshd[5837]: Invalid user pi from 198.51.100.11 port 2928
+Mar 14 01:12:17 web01 sshd[5837]: Failed password for invalid user pi from 198.51.100.11 port 2928 ssh2
+Mar 14 01:12:20 web01 sshd[5843]: Invalid user jenkins from 198.51.100.11 port 54126
+Mar 14 01:12:20 web01 sshd[5843]: Failed password for invalid user jenkins from 198.51.100.11 port 54126 ssh2
+Mar 14 01:12:24 web01 sshd[5845]: Invalid user admin from 198.51.100.11 port 51168
+Mar 14 01:12:24 web01 sshd[5845]: Failed password for invalid user admin from 198.51.100.11 port 51168 ssh2
+Mar 14 01:12:24 web01 sshd[5845]: Connection closed by invalid user admin 198.51.100.11 port 51168 [preauth]
+Mar 14 01:12:27 web01 sshd[5848]: Invalid user guest from 198.51.100.11 port 36053
+Mar 14 01:12:27 web01 sshd[5848]: Failed password for invalid user guest from 198.51.100.11 port 36053 ssh2
+Mar 14 01:12:28 web01 sshd[5852]: Invalid user test from 198.51.100.11 port 56205
+Mar 14 01:12:28 web01 sshd[5852]: Failed password for invalid user test from 198.51.100.11 port 56205 ssh2
+Mar 14 01:12:28 web01 sshd[5852]: Connection closed by invalid user test 198.51.100.11 port 56205 [preauth]
+Mar 14 01:12:29 web01 sshd[5858]: Invalid user pi from 198.51.100.11 port 21683
+Mar 14 01:12:29 web01 sshd[5858]: Failed password for invalid user pi from 198.51.100.11 port 21683 ssh2
+Mar 14 01:12:30 web01 sshd[6205]: Invalid user root from 198.51.100.11 port 35561
+Mar 14 01:12:30 web01 sshd[6205]: Failed password for invalid user root from 198.51.100.11 port 35561 ssh2
+Mar 14 01:12:34 web01 sshd[6206]: Invalid user nagios from 198.51.100.11 port 59190
+Mar 14 01:12:34 web01 sshd[6206]: Failed password for invalid user nagios from 198.51.100.11 port 59190 ssh2
+Mar 14 01:12:35 web01 sshd[6208]: Invalid user root from 198.51.100.11 port 5034
+Mar 14 01:12:35 web01 sshd[6208]: Failed password for invalid user root from 198.51.100.11 port 5034 ssh2
+Mar 14 01:12:35 web01 sshd[6208]: Connection closed by invalid user root 198.51.100.11 port 5034 [preauth]
+Mar 14 01:12:37 web01 sshd[6211]: Invalid user root from 198.51.100.11 port 5206
+Mar 14 01:12:37 web01 sshd[6211]: Failed password for invalid user root from 198.51.100.11 port 5206 ssh2
+Mar 14 01:12:40 web01 sshd[6212]: Invalid user git from 198.51.100.11 port 10045
+Mar 14 01:12:40 web01 sshd[6212]: Failed password for invalid user git from 198.51.100.11 port 10045 ssh2
+Mar 14 01:12:42 web01 sshd[6213]: Invalid user test from 198.51.100.11 port 49131
+Mar 14 01:12:42 web01 sshd[6213]: Failed password for invalid user test from 198.51.100.11 port 49131 ssh2
+Mar 14 01:12:45 web01 sshd[6218]: Invalid user root from 198.51.100.11 port 31945
+Mar 14 01:12:45 web01 sshd[6218]: Failed password for invalid user root from 198.51.100.11 port 31945 ssh2
+Mar 14 01:12:46 web01 sshd[6224]: Invalid user administrator from 198.51.100.11 port 2441
+Mar 14 01:12:46 web01 sshd[6224]: Failed password for invalid user administrator from 198.51.100.11 port 2441 ssh2
+Mar 14 01:12:49 web01 sshd[6226]: Invalid user ftp from 198.51.100.11 port 57575
+Mar 14 01:12:49 web01 sshd[6226]: Failed password for invalid user ftp from 198.51.100.11 port 57575 ssh2
+Mar 14 01:12:50 web01 sshd[6228]: Invalid user oracle from 198.51.100.11 port 33842
+Mar 14 01:12:50 web01 sshd[6228]: Failed password for invalid user oracle from 198.51.100.11 port 33842 ssh2
+Mar 14 01:12:53 web01 sshd[6229]: Accepted password for deploy from 198.51.100.11 port 46564 ssh2
+Mar 14 01:12:54 web01 sshd[6229]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 14 01:23:51 web01 sudo:  alice : TTY=pts/0 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 14 01:32:00 web01 CRON[1035]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 01:32:01 web01 CRON[1036]: pam_unix(cron:session): session closed for user root
+Mar 14 01:46:57 web01 sshd[4925]: Connection closed by 203.0.113.210 port 23692 [preauth]
+Mar 14 01:52:33 web01 sshd[4119]: pam_unix(sshd:session): session closed for user alice
+Mar 14 01:52:33 web01 systemd-logind[811]: Removed session 2222.
+Mar 14 01:55:26 web01 sshd[5343]: Connection closed by 203.0.113.185 port 63105 [preauth]
+Mar 14 02:02:00 web01 CRON[1038]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 02:02:01 web01 CRON[1043]: pam_unix(cron:session): session closed for user root
+Mar 14 02:32:00 web01 CRON[1051]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 02:32:01 web01 CRON[1057]: pam_unix(cron:session): session closed for user root
+Mar 14 02:47:51 web01 sshd[5378]: Connection closed by 203.0.113.43 port 50438 [preauth]
+Mar 14 03:02:00 web01 CRON[1065]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 03:02:01 web01 CRON[1067]: pam_unix(cron:session): session closed for user root
+Mar 14 03:04:28 web01 sshd[5337]: Connection closed by 203.0.113.111 port 11505 [preauth]
+Mar 14 03:18:46 web01 sshd[5125]: Connection closed by 203.0.113.168 port 14091 [preauth]
+Mar 14 03:32:00 web01 CRON[1071]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 03:32:01 web01 CRON[1079]: pam_unix(cron:session): session closed for user root
+Mar 14 03:43:17 web01 sshd[5165]: Connection closed by 203.0.113.20 port 57962 [preauth]
+Mar 14 04:02:00 web01 CRON[1080]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 04:02:01 web01 CRON[1086]: pam_unix(cron:session): session closed for user root
+Mar 14 04:05:00 web01 sshd[6233]: Invalid user user from 198.51.100.12 port 16046
+Mar 14 04:05:00 web01 sshd[6233]: Failed password for invalid user user from 198.51.100.12 port 16046 ssh2
+Mar 14 04:05:00 web01 sshd[6233]: Connection closed by invalid user user 198.51.100.12 port 16046 [preauth]
+Mar 14 04:05:04 web01 sshd[6242]: Invalid user postgres from 198.51.100.12 port 51789
+Mar 14 04:05:04 web01 sshd[6242]: Failed password for invalid user postgres from 198.51.100.12 port 51789 ssh2
+Mar 14 04:05:06 web01 sshd[6247]: Invalid user git from 198.51.100.12 port 8272
+Mar 14 04:05:06 web01 sshd[6247]: Failed password for invalid user git from 198.51.100.12 port 8272 ssh2
+Mar 14 04:05:09 web01 sshd[6248]: Invalid user www from 198.51.100.12 port 5876
+Mar 14 04:05:09 web01 sshd[6248]: Failed password for invalid user www from 198.51.100.12 port 5876 ssh2
+Mar 14 04:05:12 web01 sshd[6256]: Invalid user www from 198.51.100.12 port 3669
+Mar 14 04:05:12 web01 sshd[6256]: Failed password for invalid user www from 198.51.100.12 port 3669 ssh2
+Mar 14 04:05:12 web01 sshd[6256]: Connection closed by invalid user www 198.51.100.12 port 3669 [preauth]
+Mar 14 04:05:15 web01 sshd[6257]: Invalid user ftp from 198.51.100.12 port 25478
+Mar 14 04:05:15 web01 sshd[6257]: Failed password for invalid user ftp from 198.51.100.12 port 25478 ssh2
+Mar 14 04:05:17 web01 sshd[6265]: Invalid user mysql from 198.51.100.12 port 24420
+Mar 14 04:05:17 web01 sshd[6265]: Failed password for invalid user mysql from 198.51.100.12 port 24420 ssh2
+Mar 14 04:05:18 web01 sshd[6273]: Invalid user jenkins from 198.51.100.12 port 52060
+Mar 14 04:05:18 web01 sshd[6273]: Failed password for invalid user jenkins from 198.51.100.12 port 52060 ssh2
+Mar 14 04:05:22 web01 sshd[6279]: Invalid user jenkins from 198.51.100.12 port 20139
+Mar 14 04:05:22 web01 sshd[6279]: Failed password for invalid user jenkins from 198.51.100.12 port 20139 ssh2
+Mar 14 04:05:22 web01 sshd[6279]: Connection closed by invalid user jenkins 198.51.100.12 port 20139 [preauth]
+Mar 14 04:05:23 web01 sshd[6285]: Invalid user ftp from 198.51.100.12 port 4298
+Mar 14 04:05:23 web01 sshd[6285]: Failed password for invalid user ftp from 198.51.100.12 port 4298 ssh2
+Mar 14 04:05:25 web01 sshd[6291]: Invalid user guest from 198.51.100.12 port 24248
+Mar 14 04:05:25 web01 sshd[6291]: Failed password for invalid user guest from 198.51.100.12 port 24248 ssh2
+Mar 14 04:05:26 web01 sshd[6293]: Invalid user ubuntu from 198.51.100.12 port 44327
+Mar 14 04:05:26 web01 sshd[6293]: Failed password for invalid user ubuntu from 198.51.100.12 port 44327 ssh2
+Mar 14 04:05:28 web01 sshd[6298]: Invalid user jenkins from 198.51.100.12 port 33130
+Mar 14 04:05:28 web01 sshd[6298]: Failed password for invalid user jenkins from 198.51.100.12 port 33130 ssh2
+Mar 14 04:05:29 web01 sshd[6306]: Invalid user jenkins from 198.51.100.12 port 62994
+Mar 14 04:05:29 web01 sshd[6306]: Failed password for invalid user jenkins from 198.51.100.12 port 62994 ssh2
+Mar 14 04:05:32 web01 sshd[6308]: Invalid user user from 198.51.100.12 port 33090
+Mar 14 04:05:32 web01 sshd[6308]: Failed password for invalid user user from 198.51.100.12 port 33090 ssh2
+Mar 14 04:05:34 web01 sshd[6314]: Invalid user admin from 198.51.100.12 port 4855
+Mar 14 04:05:34 web01 sshd[6314]: Failed password for invalid user admin from 198.51.100.12 port 4855 ssh2
+Mar 14 04:05:38 web01 sshd[6321]: Invalid user www from 198.51.100.12 port 49875
+Mar 14 04:05:38 web01 sshd[6321]: Failed password for invalid user www from 198.51.100.12 port 49875 ssh2
+Mar 14 04:05:41 web01 sshd[6330]: Invalid user nagios from 198.51.100.12 port 52869
+Mar 14 04:05:41 web01 sshd[6330]: Failed password for invalid user nagios from 198.51.100.12 port 52869 ssh2
+Mar 14 04:05:41 web01 sshd[6330]: Connection closed by invalid user nagios 198.51.100.12 port 52869 [preauth]
+Mar 14 04:05:43 web01 sshd[6334]: Invalid user nagios from 198.51.100.12 port 51348
+Mar 14 04:05:43 web01 sshd[6334]: Failed password for invalid user nagios from 198.51.100.12 port 51348 ssh2
+Mar 14 04:05:47 web01 sshd[6340]: Invalid user user from 198.51.100.12 port 17632
+Mar 14 04:05:47 web01 sshd[6340]: Failed password for invalid user user from 198.51.100.12 port 17632 ssh2
+Mar 14 04:05:51 web01 sshd[6346]: Invalid user guest from 198.51.100.12 port 56297
+Mar 14 04:05:51 web01 sshd[6346]: Failed password for invalid user guest from 198.51.100.12 port 56297 ssh2
+Mar 14 04:05:54 web01 sshd[6350]: Invalid user admin from 198.51.100.12 port 1360
+Mar 14 04:05:54 web01 sshd[6350]: Failed password for invalid user admin from 198.51.100.12 port 1360 ssh2
+Mar 14 04:05:57 web01 sshd[6354]: Invalid user root from 198.51.100.12 port 4002
+Mar 14 04:05:57 web01 sshd[6354]: Failed password for invalid user root from 198.51.100.12 port 4002 ssh2
+Mar 14 04:05:58 web01 sshd[6357]: Invalid user postgres from 198.51.100.12 port 56252
+Mar 14 04:05:58 web01 sshd[6357]: Failed password for invalid user postgres from 198.51.100.12 port 56252 ssh2
+Mar 14 04:05:58 web01 sshd[6357]: Connection closed by invalid user postgres 198.51.100.12 port 56252 [preauth]
+Mar 14 04:05:59 web01 sshd[6363]: Invalid user admin from 198.51.100.12 port 64445
+Mar 14 04:05:59 web01 sshd[6363]: Failed password for invalid user admin from 198.51.100.12 port 64445 ssh2
+Mar 14 04:06:03 web01 sshd[6365]: Invalid user root from 198.51.100.12 port 7292
+Mar 14 04:06:03 web01 sshd[6365]: Failed password for invalid user root from 198.51.100.12 port 7292 ssh2
+Mar 14 04:06:05 web01 sshd[6374]: Invalid user www from 198.51.100.12 port 17763
+Mar 14 04:06:05 web01 sshd[6374]: Failed password for invalid user www from 198.51.100.12 port 17763 ssh2
+Mar 14 04:06:07 web01 sshd[6383]: Invalid user git from 198.51.100.12 port 54300
+Mar 14 04:06:07 web01 sshd[6383]: Failed password for invalid user git from 198.51.100.12 port 54300 ssh2
+Mar 14 04:06:09 web01 sshd[6385]: Invalid user www from 198.51.100.12 port 5263
+Mar 14 04:06:09 web01 sshd[6385]: Failed password for invalid user www from 198.51.100.12 port 5263 ssh2
+Mar 14 04:06:13 web01 sshd[6388]: Invalid user mysql from 198.51.100.12 port 61391
+Mar 14 04:06:13 web01 sshd[6388]: Failed password for invalid user mysql from 198.51.100.12 port 61391 ssh2
+Mar 14 04:06:16 web01 sshd[6390]: Invalid user git from 198.51.100.12 port 8053
+Mar 14 04:06:16 web01 sshd[6390]: Failed password for invalid user git from 198.51.100.12 port 8053 ssh2
+Mar 14 04:06:17 web01 sshd[6399]: Invalid user guest from 198.51.100.12 port 16688
+Mar 14 04:06:17 web01 sshd[6399]: Failed password for invalid user guest from 198.51.100.12 port 16688 ssh2
+Mar 14 04:06:21 web01 sshd[6402]: Invalid user admin from 198.51.100.12 port 48086
+Mar 14 04:06:21 web01 sshd[6402]: Failed password for invalid user admin from 198.51.100.12 port 48086 ssh2
+Mar 14 04:06:25 web01 sshd[6411]: Invalid user test from 198.51.100.12 port 49246
+Mar 14 04:06:25 web01 sshd[6411]: Failed password for invalid user test from 198.51.100.12 port 49246 ssh2
+Mar 14 04:06:25 web01 sshd[6411]: Connection closed by invalid user test 198.51.100.12 port 49246 [preauth]
+Mar 14 04:06:27 web01 sshd[6418]: Invalid user pi from 198.51.100.12 port 35705
+Mar 14 04:06:27 web01 sshd[6418]: Failed password for invalid user pi from 198.51.100.12 port 35705 ssh2
+Mar 14 04:06:29 web01 sshd[6423]: Invalid user test from 198.51.100.12 port 14483
+Mar 14 04:06:29 web01 sshd[6423]: Failed password for invalid user test from 198.51.100.12 port 14483 ssh2
+Mar 14 04:06:30 web01 sshd[6432]: Invalid user test from 198.51.100.12 port 3030
+Mar 14 04:06:30 web01 sshd[6432]: Failed password for invalid user test from 198.51.100.12 port 3030 ssh2
+Mar 14 04:06:33 web01 sshd[6439]: Invalid user ftp from 198.51.100.12 port 28322
+Mar 14 04:06:33 web01 sshd[6439]: Failed password for invalid user ftp from 198.51.100.12 port 28322 ssh2
+Mar 14 04:06:33 web01 sshd[6439]: Connection closed by invalid user ftp 198.51.100.12 port 28322 [preauth]
+Mar 14 04:06:34 web01 sshd[6440]: Invalid user pi from 198.51.100.12 port 56397
+Mar 14 04:06:34 web01 sshd[6440]: Failed password for invalid user pi from 198.51.100.12 port 56397 ssh2
+Mar 14 04:06:37 web01 sshd[6445]: Invalid user administrator from 198.51.100.12 port 38038
+Mar 14 04:06:37 web01 sshd[6445]: Failed password for invalid user administrator from 198.51.100.12 port 38038 ssh2
+Mar 14 04:06:40 web01 sshd[6774]: Invalid user nagios from 198.51.100.12 port 48449
+Mar 14 04:06:40 web01 sshd[6774]: Failed password for invalid user nagios from 198.51.100.12 port 48449 ssh2
+Mar 14 04:06:43 web01 sshd[6778]: Invalid user mysql from 198.51.100.12 port 33485
+Mar 14 04:06:43 web01 sshd[6778]: Failed password for invalid user mysql from 198.51.100.12 port 33485 ssh2
+Mar 14 04:06:43 web01 sshd[6778]: Connection closed by invalid user mysql 198.51.100.12 port 33485 [preauth]
+Mar 14 04:06:46 web01 sshd[6783]: Invalid user jenkins from 198.51.100.12 port 35363
+Mar 14 04:06:46 web01 sshd[6783]: Failed password for invalid user jenkins from 198.51.100.12 port 35363 ssh2
+Mar 14 04:06:48 web01 sshd[6792]: Invalid user administrator from 198.51.100.12 port 1359
+Mar 14 04:06:48 web01 sshd[6792]: Failed password for invalid user administrator from 198.51.100.12 port 1359 ssh2
+Mar 14 04:06:48 web01 sshd[6792]: Connection closed by invalid user administrator 198.51.100.12 port 1359 [preauth]
+Mar 14 04:13:25 web01 sshd[5099]: Connection closed by 203.0.113.113 port 34755 [preauth]
+Mar 14 04:32:00 web01 CRON[1091]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 04:32:01 web01 CRON[1093]: pam_unix(cron:session): session closed for user root
+Mar 14 04:49:31 web01 sshd[5310]: Connection closed by 203.0.113.124 port 6774 [preauth]
+Mar 14 04:49:54 web01 sshd[4155]: Connection closed by 203.0.113.196 port 18374 [preauth]
+Mar 14 05:00:21 web01 sshd[5347]: Connection closed by 203.0.113.159 port 19091 [preauth]
+Mar 14 05:02:00 web01 CRON[1097]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 05:02:01 web01 CRON[1105]: pam_unix(cron:session): session closed for user root
+Mar 14 05:32:00 web01 CRON[1111]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 05:32:01 web01 CRON[1114]: pam_unix(cron:session): session closed for user root
+Mar 14 05:42:52 web01 sshd[4099]: Accepted publickey for carol from 10.0.2.69 port 48492 ssh2: ED25519 SHA256:5RNWGsS733/SSUsESSzXC/c71ZJZ49AXa5vVGkfk762
+Mar 14 05:42:53 web01 sshd[4099]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 14 05:42:53 web01 systemd-logind[811]: New session 2219 of user carol.
+Mar 14 05:52:07 web01 sshd[4099]: pam_unix(sshd:session): session closed for user carol
+Mar 14 05:52:07 web01 systemd-logind[811]: Removed session 2219.
+Mar 14 06:00:00 web01 sshd[6795]: Invalid user git from 198.51.100.13 port 52011
+Mar 14 06:00:00 web01 sshd[6795]: Failed password for invalid user git from 198.51.100.13 port 52011 ssh2
+Mar 14 06:00:00 web01 sshd[6795]: Connection closed by invalid user git 198.51.100.13 port 52011 [preauth]
+Mar 14 06:02:00 web01 CRON[1119]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 06:02:01 web01 CRON[1471]: pam_unix(cron:session): session closed for user root
+Mar 14 06:07:10 web01 sshd[6799]: Invalid user pi from 198.51.100.13 port 2625
+Mar 14 06:07:10 web01 sshd[6799]: Failed password for invalid user pi from 198.51.100.13 port 2625 ssh2
+Mar 14 06:07:10 web01 sshd[6799]: Connection closed by invalid user pi 198.51.100.13 port 2625 [preauth]
+Mar 14 06:15:15 web01 sshd[6804]: Invalid user www from 198.51.100.13 port 32609
+Mar 14 06:15:15 web01 sshd[6804]: Failed password for invalid user www from 198.51.100.13 port 32609 ssh2
+Mar 14 06:20:33 web01 sshd[6813]: Invalid user ftp from 198.51.100.13 port 22626
+Mar 14 06:20:33 web01 sshd[6813]: Failed password for invalid user ftp from 198.51.100.13 port 22626 ssh2
+Mar 14 06:24:16 web01 sshd[6818]: Invalid user test from 198.51.100.13 port 9900
+Mar 14 06:24:16 web01 sshd[6818]: Failed password for invalid user test from 198.51.100.13 port 9900 ssh2
+Mar 14 06:24:16 web01 sshd[6818]: Connection closed by invalid user test 198.51.100.13 port 9900 [preauth]
+Mar 14 06:30:29 web01 sshd[6827]: Invalid user nagios from 198.51.100.13 port 52839
+Mar 14 06:30:29 web01 sshd[6827]: Failed password for invalid user nagios from 198.51.100.13 port 52839 ssh2
+Mar 14 06:30:29 web01 sshd[6827]: Connection closed by invalid user nagios 198.51.100.13 port 52839 [preauth]
+Mar 14 06:32:00 web01 CRON[1476]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 06:32:01 web01 CRON[1481]: pam_unix(cron:session): session closed for user root
+Mar 14 06:38:07 web01 sshd[6835]: Invalid user test from 198.51.100.13 port 54850
+Mar 14 06:38:07 web01 sshd[6835]: Failed password for invalid user test from 198.51.100.13 port 54850 ssh2
+Mar 14 06:42:35 web01 sshd[6838]: Invalid user jenkins from 198.51.100.13 port 53811
+Mar 14 06:42:35 web01 sshd[6838]: Failed password for invalid user jenkins from 198.51.100.13 port 53811 ssh2
+Mar 14 06:42:35 web01 sshd[6838]: Connection closed by invalid user jenkins 198.51.100.13 port 53811 [preauth]
+Mar 14 06:48:16 web01 sshd[6842]: Invalid user jenkins from 198.51.100.13 port 52419
+Mar 14 06:48:16 web01 sshd[6842]: Failed password for invalid user jenkins from 198.51.100.13 port 52419 ssh2
+Mar 14 06:55:18 web01 sshd[6847]: Invalid user oracle from 198.51.100.13 port 52684
+Mar 14 06:55:18 web01 sshd[6847]: Failed password for invalid user oracle from 198.51.100.13 port 52684 ssh2
+Mar 14 06:55:18 web01 sshd[6847]: Connection closed by invalid user oracle 198.51.100.13 port 52684 [preauth]
+Mar 14 06:58:40 web01 sshd[6852]: Invalid user git from 198.51.100.13 port 54669
+Mar 14 06:58:40 web01 sshd[6852]: Failed password for invalid user git from 198.51.100.13 port 54669 ssh2
+Mar 14 06:58:40 web01 sshd[6852]: Connection closed by invalid user git 198.51.100.13 port 54669 [preauth]
+Mar 14 07:02:00 web01 CRON[1881]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 07:02:01 web01 CRON[1885]: pam_unix(cron:session): session closed for user root
+Mar 14 07:03:05 web01 sshd[6858]: Invalid user guest from 198.51.100.13 port 44327
+Mar 14 07:03:05 web01 sshd[6858]: Failed password for invalid user guest from 198.51.100.13 port 44327 ssh2
+Mar 14 07:26:08 web01 sshd[5150]: Connection closed by 203.0.113.157 port 44800 [preauth]
+Mar 14 07:32:00 web01 CRON[1893]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 07:32:01 web01 CRON[1898]: pam_unix(cron:session): session closed for user root
+Mar 14 07:55:49 web01 sshd[4410]: Connection closed by 203.0.113.137 port 8813 [preauth]
+Mar 14 07:57:30 web01 sshd[5305]: Connection closed by 203.0.113.38 port 42488 [preauth]
+Mar 14 08:02:00 web01 CRON[1899]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 08:02:01 web01 CRON[1902]: pam_unix(cron:session): session closed for user root
+Mar 14 08:02:40 web01 sshd[4077]: Accepted password for bob from 10.0.4.23 port 64226 ssh2
+Mar 14 08:02:41 web01 sshd[4077]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+Mar 14 08:02:41 web01 systemd-logind[811]: New session 2213 of user bob.
+Mar 14 08:12:46 web01 sshd[4389]: Connection closed by 203.0.113.207 port 24260 [preauth]
+Mar 14 08:32:00 web01 CRON[1911]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 08:32:01 web01 CRON[1914]: pam_unix(cron:session): session closed for user root
+Mar 14 08:48:26 web01 sudo:  bob : TTY=pts/3 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 14 08:53:12 web01 sshd[4919]: Connection closed by 203.0.113.171 port 30546 [preauth]
+Mar 14 09:01:14 web01 sshd[5383]: Connection closed by 203.0.113.94 port 60668 [preauth]
+Mar 14 09:02:00 web01 CRON[1920]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 09:02:01 web01 CRON[1926]: pam_unix(cron:session): session closed for user root
+Mar 14 09:12:32 web01 sshd[4423]: Connection closed by 203.0.113.120 port 11958 [preauth]
+Mar 14 09:14:05 web01 sshd[5413]: Failed password for alice from 10.0.1.33 port 51880 ssh2
+Mar 14 09:14:17 web01 sshd[5413]: Failed password for alice from 10.0.1.33 port 51880 ssh2
+Mar 14 09:14:27 web01 sshd[5413]: Accepted password for alice from 10.0.1.33 port 51880 ssh2
+Mar 14 09:14:28 web01 sshd[5413]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 14 09:30:53 web01 sshd[4077]: pam_unix(sshd:session): session closed for user bob
+Mar 14 09:30:53 web01 systemd-logind[811]: Removed session 2213.
+Mar 14 09:32:00 web01 CRON[1934]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 09:32:01 web01 CRON[1943]: pam_unix(cron:session): session closed for user root
+Mar 14 09:33:36 web01 sshd[3770]: Accepted password for alice from 10.0.3.59 port 32239 ssh2
+Mar 14 09:33:37 web01 sshd[3770]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 14 09:33:37 web01 systemd-logind[811]: New session 2208 of user alice.
+Mar 14 09:41:26 web01 sshd[5077]: Connection closed by 203.0.113.159 port 28504 [preauth]
+Mar 14 09:55:45 web01 sshd[3770]: pam_unix(sshd:session): session closed for user alice
+Mar 14 09:55:45 web01 systemd-logind[811]: Removed session 2208.
+Mar 14 10:02:00 web01 CRON[1944]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 10:02:01 web01 CRON[1947]: pam_unix(cron:session): session closed for user root
+Mar 14 10:31:52 web01 sshd[4177]: Connection closed by 203.0.113.170 port 33122 [preauth]
+Mar 14 10:32:00 web01 CRON[1955]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 10:32:01 web01 CRON[1959]: pam_unix(cron:session): session closed for user root
+Mar 14 11:02:00 web01 CRON[2230]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 11:02:01 web01 CRON[2232]: pam_unix(cron:session): session closed for user root
+Mar 14 11:30:41 web01 sshd[4468]: Connection closed by 203.0.113.136 port 9561 [preauth]
+Mar 14 11:32:00 web01 CRON[2239]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 11:32:01 web01 CRON[2245]: pam_unix(cron:session): session closed for user root
+Mar 14 11:37:00 web01 sshd[7900]: Invalid user administrator from 192.0.2.101 port 28919
+Mar 14 11:37:00 web01 sshd[7900]: Failed password for invalid user administrator from 192.0.2.101 port 28919 ssh2
+Mar 14 11:37:03 web01 sshd[7907]: Invalid user ubuntu from 192.0.2.101 port 18811
+Mar 14 11:37:03 web01 sshd[7907]: Failed password for invalid user ubuntu from 192.0.2.101 port 18811 ssh2
+Mar 14 11:37:04 web01 sshd[7908]: Invalid user ubuntu from 192.0.2.101 port 4150
+Mar 14 11:37:04 web01 sshd[7908]: Failed password for invalid user ubuntu from 192.0.2.101 port 4150 ssh2
+Mar 14 11:37:07 web01 sshd[7909]: Invalid user user from 192.0.2.101 port 30464
+Mar 14 11:37:07 web01 sshd[7909]: Failed password for invalid user user from 192.0.2.101 port 30464 ssh2
+Mar 14 11:37:07 web01 sshd[7909]: Connection closed by invalid user user 192.0.2.101 port 30464 [preauth]
+Mar 14 11:37:09 web01 sshd[7916]: Invalid user user from 192.0.2.101 port 48957
+Mar 14 11:37:09 web01 sshd[7916]: Failed password for invalid user user from 192.0.2.101 port 48957 ssh2
+Mar 14 11:37:09 web01 sshd[7916]: Connection closed by invalid user user 192.0.2.101 port 48957 [preauth]
+Mar 14 11:37:10 web01 sshd[7917]: Invalid user test from 192.0.2.101 port 61425
+Mar 14 11:37:10 web01 sshd[7917]: Failed password for invalid user test from 192.0.2.101 port 61425 ssh2
+Mar 14 11:37:12 web01 sshd[7923]: Invalid user ubuntu from 192.0.2.101 port 2219
+Mar 14 11:37:12 web01 sshd[7923]: Failed password for invalid user ubuntu from 192.0.2.101 port 2219 ssh2
+Mar 14 11:37:15 web01 sshd[7932]: Invalid user pi from 192.0.2.101 port 19435
+Mar 14 11:37:15 web01 sshd[7932]: Failed password for invalid user pi from 192.0.2.101 port 19435 ssh2
+Mar 14 11:37:19 web01 sshd[7940]: Invalid user mysql from 192.0.2.101 port 47559
+Mar 14 11:37:19 web01 sshd[7940]: Failed password for invalid user mysql from 192.0.2.101 port 47559 ssh2
+Mar 14 11:37:20 web01 sshd[7948]: Invalid user postgres from 192.0.2.101 port 2422
+Mar 14 11:37:20 web01 sshd[7948]: Failed password for invalid user postgres from 192.0.2.101 port 2422 ssh2
+Mar 14 11:37:23 web01 sshd[7949]: Invalid user user from 192.0.2.101 port 29026
+Mar 14 11:37:23 web01 sshd[7949]: Failed password for invalid user user from 192.0.2.101 port 29026 ssh2
+Mar 14 11:37:26 web01 sshd[7950]: Invalid user mysql from 192.0.2.101 port 53672
+Mar 14 11:37:26 web01 sshd[7950]: Failed password for invalid user mysql from 192.0.2.101 port 53672 ssh2
+Mar 14 11:37:27 web01 sshd[7953]: Invalid user postgres from 192.0.2.101 port 34648
+Mar 14 11:37:27 web01 sshd[7953]: Failed password for invalid user postgres from 192.0.2.101 port 34648 ssh2
+Mar 14 11:37:30 web01 sshd[7959]: Invalid user postgres from 192.0.2.101 port 11842
+Mar 14 11:37:30 web01 sshd[7959]: Failed password for invalid user postgres from 192.0.2.101 port 11842 ssh2
+Mar 14 11:37:33 web01 sshd[7961]: Invalid user ubuntu from 192.0.2.101 port 58275
+Mar 14 11:37:33 web01 sshd[7961]: Failed password for invalid user ubuntu from 192.0.2.101 port 58275 ssh2
+Mar 14 11:37:33 web01 sshd[7961]: Connection closed by invalid user ubuntu 192.0.2.101 port 58275 [preauth]
+Mar 14 11:37:34 web01 sshd[7968]: Invalid user test from 192.0.2.101 port 3624
+Mar 14 11:37:34 web01 sshd[7968]: Failed password for invalid user test from 192.0.2.101 port 3624 ssh2
+Mar 14 11:37:34 web01 sshd[7968]: Connection closed by invalid user test 192.0.2.101 port 3624 [preauth]
+Mar 14 11:37:35 web01 sshd[7973]: Accepted password for deploy from 192.0.2.101 port 17417 ssh2
+Mar 14 11:37:36 web01 sshd[7973]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 14 11:45:49 web01 sshd[5370]: Connection closed by 203.0.113.123 port 59657 [preauth]
+Mar 14 11:53:15 web01 sshd[4533]: Connection closed by 203.0.113.55 port 61030 [preauth]
+Mar 14 12:02:00 web01 CRON[2250]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 12:02:01 web01 CRON[2253]: pam_unix(cron:session): session closed for user root
+Mar 14 12:24:04 web01 sshd[4785]: Connection closed by 203.0.113.72 port 47657 [preauth]
+Mar 14 12:32:00 web01 CRON[2260]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 12:32:01 web01 CRON[2261]: pam_unix(cron:session): session closed for user root
+Mar 14 12:32:43 web01 sshd[5391]: Connection closed by 203.0.113.87 port 42949 [preauth]
+Mar 14 12:40:27 web01 sshd[5074]: Connection closed by 203.0.113.214 port 39322 [preauth]
+Mar 14 12:51:29 web01 sshd[5406]: Connection closed by 203.0.113.29 port 55964 [preauth]
+Mar 14 13:02:00 web01 CRON[2270]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 13:02:01 web01 CRON[2271]: pam_unix(cron:session): session closed for user root
+Mar 14 13:06:40 web01 sshd[4394]: Connection closed by 203.0.113.66 port 50153 [preauth]
+Mar 14 13:32:00 web01 CRON[2278]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 13:32:01 web01 CRON[2281]: pam_unix(cron:session): session closed for user root
+Mar 14 13:43:05 web01 sshd[3751]: Accepted publickey for alice from 10.0.1.177 port 38565 ssh2: ED25519 SHA256:8TSkumLkNMK52tUQcUZeg375SfF/t9ze4rSiY8YHgio
+Mar 14 13:43:06 web01 sshd[3751]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 14 13:43:06 web01 systemd-logind[811]: New session 2205 of user alice.
+Mar 14 13:43:09 web01 sshd[4507]: Connection closed by 203.0.113.24 port 62023 [preauth]
+Mar 14 14:02:00 web01 CRON[2289]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 14:02:01 web01 CRON[2295]: pam_unix(cron:session): session closed for user root
+Mar 14 14:10:22 web01 sshd[4502]: Connection closed by 203.0.113.155 port 58361 [preauth]
+Mar 14 14:18:54 web01 sshd[3751]: pam_unix(sshd:session): session closed for user alice
+Mar 14 14:18:54 web01 systemd-logind[811]: Removed session 2205.
+Mar 14 14:23:04 web01 sshd[4474]: Connection closed by 203.0.113.200 port 33961 [preauth]
+Mar 14 14:27:31 web01 sshd[5170]: Connection closed by 203.0.113.181 port 62449 [preauth]
+Mar 14 14:32:00 web01 CRON[2298]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 14:32:01 web01 CRON[2302]: pam_unix(cron:session): session closed for user root
+Mar 14 14:38:09 web01 sshd[4178]: Connection closed by 203.0.113.26 port 9693 [preauth]
+Mar 14 15:02:00 web01 CRON[2305]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 15:02:01 web01 CRON[2307]: pam_unix(cron:session): session closed for user root
+Mar 14 15:32:00 web01 CRON[2314]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 15:32:01 web01 CRON[2321]: pam_unix(cron:session): session closed for user root
+Mar 14 16:02:00 web01 CRON[2323]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 16:02:01 web01 CRON[2329]: pam_unix(cron:session): session closed for user root
+Mar 14 16:07:37 web01 sshd[4440]: Connection closed by 203.0.113.151 port 60069 [preauth]
+Mar 14 16:10:42 web01 sshd[5158]: Connection closed by 203.0.113.51 port 64856 [preauth]
+Mar 14 16:30:00 web01 sshd[6860]: Invalid user nagios from 198.51.100.14 port 28133
+Mar 14 16:30:00 web01 sshd[6860]: Failed password for invalid user nagios from 198.51.100.14 port 28133 ssh2
+Mar 14 16:32:00 web01 CRON[2333]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 16:32:01 web01 CRON[2336]: pam_unix(cron:session): session closed for user root
+Mar 14 16:33:09 web01 sshd[6865]: Invalid user ftp from 198.51.100.14 port 48712
+Mar 14 16:33:09 web01 sshd[6865]: Failed password for invalid user ftp from 198.51.100.14 port 48712 ssh2
+Mar 14 16:36:00 web01 sshd[4421]: Connection closed by 203.0.113.110 port 31270 [preauth]
+Mar 14 16:38:02 web01 sshd[6867]: Invalid user jenkins from 198.51.100.14 port 33628
+Mar 14 16:38:02 web01 sshd[6867]: Failed password for invalid user jenkins from 198.51.100.14 port 33628 ssh2
+Mar 14 16:40:54 web01 sshd[6871]: Invalid user mysql from 198.51.100.14 port 5845
+Mar 14 16:40:54 web01 sshd[6871]: Failed password for invalid user mysql from 198.51.100.14 port 5845 ssh2
+Mar 14 16:41:11 web01 sshd[4909]: Connection closed by 203.0.113.110 port 43516 [preauth]
+Mar 14 16:47:00 web01 sshd[6879]: Invalid user admin from 198.51.100.14 port 58809
+Mar 14 16:47:00 web01 sshd[6879]: Failed password for invalid user admin from 198.51.100.14 port 58809 ssh2
+Mar 14 16:51:05 web01 sshd[6881]: Invalid user admin from 198.51.100.14 port 26685
+Mar 14 16:51:05 web01 sshd[6881]: Failed password for invalid user admin from 198.51.100.14 port 26685 ssh2
+Mar 14 16:57:10 web01 sshd[5070]: Connection closed by 203.0.113.194 port 44203 [preauth]
+Mar 14 16:57:34 web01 sshd[6890]: Invalid user www from 198.51.100.14 port 3400
+Mar 14 16:57:34 web01 sshd[6890]: Failed password for invalid user www from 198.51.100.14 port 3400 ssh2
+Mar 14 17:02:00 web01 CRON[2342]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 17:02:01 web01 CRON[2578]: pam_unix(cron:session): session closed for user root
+Mar 14 17:04:16 web01 sshd[6891]: Invalid user test from 198.51.100.14 port 35438
+Mar 14 17:04:16 web01 sshd[6891]: Failed password for invalid user test from 198.51.100.14 port 35438 ssh2
+Mar 14 17:06:16 web01 sshd[6894]: Invalid user administrator from 198.51.100.14 port 11164
+Mar 14 17:06:16 web01 sshd[6894]: Failed password for invalid user administrator from 198.51.100.14 port 11164 ssh2
+Mar 14 17:08:49 web01 sshd[6899]: Invalid user oracle from 198.51.100.14 port 13372
+Mar 14 17:08:49 web01 sshd[6899]: Failed password for invalid user oracle from 198.51.100.14 port 13372 ssh2
+Mar 14 17:11:30 web01 sshd[6907]: Invalid user ftp from 198.51.100.14 port 11832
+Mar 14 17:11:30 web01 sshd[6907]: Failed password for invalid user ftp from 198.51.100.14 port 11832 ssh2
+Mar 14 17:11:30 web01 sshd[6907]: Connection closed by invalid user ftp 198.51.100.14 port 11832 [preauth]
+Mar 14 17:16:26 web01 sshd[7017]: Invalid user admin from 198.51.100.14 port 63988
+Mar 14 17:16:26 web01 sshd[7017]: Failed password for invalid user admin from 198.51.100.14 port 63988 ssh2
+Mar 14 17:21:40 web01 sshd[7023]: Invalid user git from 198.51.100.14 port 57159
+Mar 14 17:21:40 web01 sshd[7023]: Failed password for invalid user git from 198.51.100.14 port 57159 ssh2
+Mar 14 17:21:40 web01 sshd[7023]: Connection closed by invalid user git 198.51.100.14 port 57159 [preauth]
+Mar 14 17:28:23 web01 sshd[7025]: Invalid user mysql from 198.51.100.14 port 23411
+Mar 14 17:28:23 web01 sshd[7025]: Failed password for invalid user mysql from 198.51.100.14 port 23411 ssh2
+Mar 14 17:32:00 web01 CRON[2586]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 17:32:01 web01 CRON[2595]: pam_unix(cron:session): session closed for user root
+Mar 14 17:32:37 web01 sshd[7033]: Invalid user admin from 198.51.100.14 port 35322
+Mar 14 17:32:37 web01 sshd[7033]: Failed password for invalid user admin from 198.51.100.14 port 35322 ssh2
+Mar 14 17:35:02 web01 sshd[7038]: Accepted password for backup from 198.51.100.14 port 52304 ssh2
+Mar 14 17:35:03 web01 sshd[7038]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 14 18:02:00 web01 CRON[2598]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 18:02:01 web01 CRON[2604]: pam_unix(cron:session): session closed for user root
+Mar 14 18:04:03 web01 sshd[5334]: Connection closed by 203.0.113.114 port 13364 [preauth]
+Mar 14 18:18:48 web01 sshd[3750]: Accepted publickey for ops from 10.0.4.110 port 62427 ssh2: ED25519 SHA256:ULdkwQoo4XhQTebaQDY59hXhG6dtS7y5H1JxmBc9AE7
+Mar 14 18:18:49 web01 sshd[3750]: pam_unix(sshd:session): session opened for user ops by (uid=0)
+Mar 14 18:18:49 web01 systemd-logind[811]: New session 2204 of user ops.
+Mar 14 18:32:00 web01 CRON[2613]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 18:32:01 web01 CRON[2618]: pam_unix(cron:session): session closed for user root
+Mar 14 19:02:00 web01 CRON[2624]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 19:02:01 web01 CRON[2627]: pam_unix(cron:session): session closed for user root
+Mar 14 19:12:07 web01 sudo:  ops : TTY=pts/1 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 14 19:13:29 web01 sshd[3750]: pam_unix(sshd:session): session closed for user ops
+Mar 14 19:13:29 web01 systemd-logind[811]: Removed session 2204.
+Mar 14 19:32:00 web01 CRON[2973]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 19:32:01 web01 CRON[2974]: pam_unix(cron:session): session closed for user root
+Mar 14 19:38:46 web01 sshd[4071]: Accepted publickey for deploy from 10.0.2.185 port 61790 ssh2: ED25519 SHA256:sPYh6wnAWc0kjFw7tw9ZQ9r1V6RXMGVwEaUroRLXXwS
+Mar 14 19:38:47 web01 sshd[4071]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 14 19:38:47 web01 systemd-logind[811]: New session 2212 of user deploy.
+Mar 14 19:52:05 web01 sshd[4133]: Accepted password for alice from 10.0.4.78 port 53482 ssh2
+Mar 14 19:52:06 web01 sshd[4133]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 14 19:52:06 web01 systemd-logind[811]: New session 2224 of user alice.
+Mar 14 19:53:31 web01 sshd[5054]: Connection closed by 203.0.113.119 port 46138 [preauth]
+Mar 14 20:01:25 web01 sudo:  alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 14 20:02:00 web01 CRON[2980]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 20:02:01 web01 CRON[2986]: pam_unix(cron:session): session closed for user root
+Mar 14 20:02:51 web01 sshd[4133]: pam_unix(sshd:session): session closed for user alice
+Mar 14 20:02:51 web01 systemd-logind[811]: Removed session 2224.
+Mar 14 20:11:39 web01 sshd[4071]: pam_unix(sshd:session): session closed for user deploy
+Mar 14 20:11:39 web01 systemd-logind[811]: Removed session 2212.
+Mar 14 20:18:25 web01 sshd[5318]: Connection closed by 203.0.113.198 port 48776 [preauth]
+Mar 14 20:32:00 web01 CRON[2993]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 20:32:01 web01 CRON[2999]: pam_unix(cron:session): session closed for user root
+Mar 14 20:39:29 web01 sshd[5309]: Connection closed by 203.0.113.158 port 47313 [preauth]
+Mar 14 21:02:00 web01 CRON[3005]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 21:02:01 web01 CRON[3011]: pam_unix(cron:session): session closed for user root
+Mar 14 21:23:08 web01 sshd[4164]: Connection closed by 203.0.113.194 port 49273 [preauth]
+Mar 14 21:23:34 web01 sshd[5057]: Connection closed by 203.0.113.148 port 12755 [preauth]
+Mar 14 21:32:00 web01 CRON[3016]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 21:32:01 web01 CRON[3021]: pam_unix(cron:session): session closed for user root
+Mar 14 22:02:00 web01 CRON[3027]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 22:02:01 web01 CRON[3028]: pam_unix(cron:session): session closed for user root
+Mar 14 22:09:00 web01 sshd[7039]: Invalid user mysql from 198.51.100.15 port 11152
+Mar 14 22:09:00 web01 sshd[7039]: Failed password for invalid user mysql from 198.51.100.15 port 11152 ssh2
+Mar 14 22:09:00 web01 sshd[7039]: Connection closed by invalid user mysql 198.51.100.15 port 11152 [preauth]
+Mar 14 22:09:02 web01 sshd[7044]: Invalid user postgres from 198.51.100.15 port 47973
+Mar 14 22:09:02 web01 sshd[7044]: Failed password for invalid user postgres from 198.51.100.15 port 47973 ssh2
+Mar 14 22:09:06 web01 sshd[7052]: Invalid user jenkins from 198.51.100.15 port 31142
+Mar 14 22:09:06 web01 sshd[7052]: Failed password for invalid user jenkins from 198.51.100.15 port 31142 ssh2
+Mar 14 22:09:07 web01 sshd[7060]: Invalid user mysql from 198.51.100.15 port 13001
+Mar 14 22:09:07 web01 sshd[7060]: Failed password for invalid user mysql from 198.51.100.15 port 13001 ssh2
+Mar 14 22:09:07 web01 sshd[7060]: Connection closed by invalid user mysql 198.51.100.15 port 13001 [preauth]
+Mar 14 22:09:10 web01 sshd[7069]: Invalid user oracle from 198.51.100.15 port 3530
+Mar 14 22:09:10 web01 sshd[7069]: Failed password for invalid user oracle from 198.51.100.15 port 3530 ssh2
+Mar 14 22:09:13 web01 sshd[7070]: Invalid user jenkins from 198.51.100.15 port 46047
+Mar 14 22:09:13 web01 sshd[7070]: Failed password for invalid user jenkins from 198.51.100.15 port 46047 ssh2
+Mar 14 22:09:15 web01 sshd[7074]: Invalid user nagios from 198.51.100.15 port 25303
+Mar 14 22:09:15 web01 sshd[7074]: Failed password for invalid user nagios from 198.51.100.15 port 25303 ssh2
+Mar 14 22:09:15 web01 sshd[7074]: Connection closed by invalid user nagios 198.51.100.15 port 25303 [preauth]
+Mar 14 22:09:16 web01 sshd[7078]: Invalid user jenkins from 198.51.100.15 port 7773
+Mar 14 22:09:16 web01 sshd[7078]: Failed password for invalid user jenkins from 198.51.100.15 port 7773 ssh2
+Mar 14 22:09:18 web01 sshd[7082]: Invalid user ubuntu from 198.51.100.15 port 18816
+Mar 14 22:09:18 web01 sshd[7082]: Failed password for invalid user ubuntu from 198.51.100.15 port 18816 ssh2
+Mar 14 22:09:21 web01 sshd[7088]: Invalid user oracle from 198.51.100.15 port 17794
+Mar 14 22:09:21 web01 sshd[7088]: Failed password for invalid user oracle from 198.51.100.15 port 17794 ssh2
+Mar 14 22:09:25 web01 sshd[7093]: Invalid user ubuntu from 198.51.100.15 port 2343
+Mar 14 22:09:25 web01 sshd[7093]: Failed password for invalid user ubuntu from 198.51.100.15 port 2343 ssh2
+Mar 14 22:09:26 web01 sshd[7094]: Invalid user mysql from 198.51.100.15 port 18263
+Mar 14 22:09:26 web01 sshd[7094]: Failed password for invalid user mysql from 198.51.100.15 port 18263 ssh2
+Mar 14 22:09:27 web01 sshd[7098]: Invalid user ubuntu from 198.51.100.15 port 43911
+Mar 14 22:09:27 web01 sshd[7098]: Failed password for invalid user ubuntu from 198.51.100.15 port 43911 ssh2
+Mar 14 22:09:27 web01 sshd[7098]: Connection closed by invalid user ubuntu 198.51.100.15 port 43911 [preauth]
+Mar 14 22:09:31 web01 sshd[7384]: Invalid user ubuntu from 198.51.100.15 port 21506
+Mar 14 22:09:31 web01 sshd[7384]: Failed password for invalid user ubuntu from 198.51.100.15 port 21506 ssh2
+Mar 14 22:09:31 web01 sshd[7384]: Connection closed by invalid user ubuntu 198.51.100.15 port 21506 [preauth]
+Mar 14 22:09:33 web01 sshd[7691]: Invalid user nagios from 198.51.100.15 port 55468
+Mar 14 22:09:33 web01 sshd[7691]: Failed password for invalid user nagios from 198.51.100.15 port 55468 ssh2
+Mar 14 22:09:33 web01 sshd[7691]: Connection closed by invalid user nagios 198.51.100.15 port 55468 [preauth]
+Mar 14 22:09:35 web01 sshd[7693]: Invalid user mysql from 198.51.100.15 port 4393
+Mar 14 22:09:35 web01 sshd[7693]: Failed password for invalid user mysql from 198.51.100.15 port 4393 ssh2
+Mar 14 22:09:36 web01 sshd[7702]: Invalid user jenkins from 198.51.100.15 port 24636
+Mar 14 22:09:36 web01 sshd[7702]: Failed password for invalid user jenkins from 198.51.100.15 port 24636 ssh2
+Mar 14 22:09:36 web01 sshd[7702]: Connection closed by invalid user jenkins 198.51.100.15 port 24636 [preauth]
+Mar 14 22:09:39 web01 sshd[7704]: Invalid user mysql from 198.51.100.15 port 27497
+Mar 14 22:09:39 web01 sshd[7704]: Failed password for invalid user mysql from 198.51.100.15 port 27497 ssh2
+Mar 14 22:09:42 web01 sshd[7705]: Invalid user postgres from 198.51.100.15 port 2445
+Mar 14 22:09:42 web01 sshd[7705]: Failed password for invalid user postgres from 198.51.100.15 port 2445 ssh2
+Mar 14 22:09:42 web01 sshd[7705]: Connection closed by invalid user postgres 198.51.100.15 port 2445 [preauth]
+Mar 14 22:09:44 web01 sshd[7710]: Invalid user jenkins from 198.51.100.15 port 50731
+Mar 14 22:09:44 web01 sshd[7710]: Failed password for invalid user jenkins from 198.51.100.15 port 50731 ssh2
+Mar 14 22:09:44 web01 sshd[7710]: Connection closed by invalid user jenkins 198.51.100.15 port 50731 [preauth]
+Mar 14 22:09:48 web01 sshd[7711]: Invalid user nagios from 198.51.100.15 port 41299
+Mar 14 22:09:48 web01 sshd[7711]: Failed password for invalid user nagios from 198.51.100.15 port 41299 ssh2
+Mar 14 22:09:48 web01 sshd[7711]: Connection closed by invalid user nagios 198.51.100.15 port 41299 [preauth]
+Mar 14 22:09:49 web01 sshd[7712]: Invalid user ubuntu from 198.51.100.15 port 47367
+Mar 14 22:09:49 web01 sshd[7712]: Failed password for invalid user ubuntu from 198.51.100.15 port 47367 ssh2
+Mar 14 22:09:52 web01 sshd[7719]: Invalid user oracle from 198.51.100.15 port 46077
+Mar 14 22:09:52 web01 sshd[7719]: Failed password for invalid user oracle from 198.51.100.15 port 46077 ssh2
+Mar 14 22:09:53 web01 sshd[7721]: Invalid user oracle from 198.51.100.15 port 2524
+Mar 14 22:09:53 web01 sshd[7721]: Failed password for invalid user oracle from 198.51.100.15 port 2524 ssh2
+Mar 14 22:09:57 web01 sshd[7730]: Invalid user jenkins from 198.51.100.15 port 60931
+Mar 14 22:09:57 web01 sshd[7730]: Failed password for invalid user jenkins from 198.51.100.15 port 60931 ssh2
+Mar 14 22:10:01 web01 sshd[7739]: Invalid user postgres from 198.51.100.15 port 37708
+Mar 14 22:10:01 web01 sshd[7739]: Failed password for invalid user postgres from 198.51.100.15 port 37708 ssh2
+Mar 14 22:10:01 web01 sshd[7739]: Connection closed by invalid user postgres 198.51.100.15 port 37708 [preauth]
+Mar 14 22:10:04 web01 sshd[7740]: Invalid user postgres from 198.51.100.15 port 28005
+Mar 14 22:10:04 web01 sshd[7740]: Failed password for invalid user postgres from 198.51.100.15 port 28005 ssh2
+Mar 14 22:10:04 web01 sshd[7740]: Connection closed by invalid user postgres 198.51.100.15 port 28005 [preauth]
+Mar 14 22:10:08 web01 sshd[7749]: Invalid user postgres from 198.51.100.15 port 13500
+Mar 14 22:10:08 web01 sshd[7749]: Failed password for invalid user postgres from 198.51.100.15 port 13500 ssh2
+Mar 14 22:10:09 web01 sshd[7756]: Invalid user jenkins from 198.51.100.15 port 34163
+Mar 14 22:10:09 web01 sshd[7756]: Failed password for invalid user jenkins from 198.51.100.15 port 34163 ssh2
+Mar 14 22:10:09 web01 sshd[7756]: Connection closed by invalid user jenkins 198.51.100.15 port 34163 [preauth]
+Mar 14 22:10:12 web01 sshd[7762]: Invalid user mysql from 198.51.100.15 port 31259
+Mar 14 22:10:12 web01 sshd[7762]: Failed password for invalid user mysql from 198.51.100.15 port 31259 ssh2
+Mar 14 22:32:00 web01 CRON[3032]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 22:32:01 web01 CRON[3035]: pam_unix(cron:session): session closed for user root
+Mar 14 22:46:42 web01 sshd[5392]: Connection closed by 203.0.113.38 port 23411 [preauth]
+Mar 14 22:55:32 web01 sshd[5110]: Connection closed by 203.0.113.54 port 4305 [preauth]
+Mar 14 22:59:38 web01 sshd[3771]: Accepted publickey for backup from 10.0.1.162 port 6082 ssh2: ED25519 SHA256:m1Zu0/PrniS1v9aQyfCqmPC2u7jtb4cbnBegqNTeUks
+Mar 14 22:59:39 web01 sshd[3771]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 14 22:59:39 web01 systemd-logind[811]: New session 2209 of user backup.
+Mar 14 23:02:00 web01 CRON[3037]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 23:02:01 web01 CRON[3043]: pam_unix(cron:session): session closed for user root
+Mar 14 23:06:27 web01 sshd[4457]: Connection closed by 203.0.113.66 port 11386 [preauth]
+Mar 14 23:32:00 web01 CRON[3048]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 14 23:32:01 web01 CRON[3057]: pam_unix(cron:session): session closed for user root
+Mar 14 23:43:08 web01 sshd[3771]: pam_unix(sshd:session): session closed for user backup
+Mar 14 23:43:08 web01 systemd-logind[811]: Removed session 2209.
+Mar 14 23:45:18 web01 sshd[5062]: Connection closed by 203.0.113.96 port 27878 [preauth]
+Mar 15 00:02:00 web01 CRON[3066]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 00:02:01 web01 CRON[3070]: pam_unix(cron:session): session closed for user root
+Mar 15 00:06:52 web01 sshd[5306]: Connection closed by 203.0.113.167 port 63078 [preauth]
+Mar 15 00:17:52 web01 sshd[4784]: Connection closed by 203.0.113.34 port 38309 [preauth]
+Mar 15 00:31:03 web01 sshd[3741]: Accepted password for carol from 10.0.4.124 port 37473 ssh2
+Mar 15 00:31:04 web01 sshd[3741]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 15 00:31:04 web01 systemd-logind[811]: New session 2201 of user carol.
+Mar 15 00:32:00 web01 CRON[3076]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 00:32:01 web01 CRON[3078]: pam_unix(cron:session): session closed for user root
+Mar 15 00:39:22 web01 sshd[5060]: Connection closed by 203.0.113.201 port 38057 [preauth]
+Mar 15 01:02:00 web01 CRON[3081]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 01:02:01 web01 CRON[3090]: pam_unix(cron:session): session closed for user root
+Mar 15 01:13:07 web01 sshd[5107]: Connection closed by 203.0.113.76 port 7834 [preauth]
+Mar 15 01:13:40 web01 sshd[5117]: Connection closed by 203.0.113.6 port 39931 [preauth]
+Mar 15 01:24:34 web01 sudo:  carol : TTY=pts/2 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 01:27:19 web01 sshd[3741]: pam_unix(sshd:session): session closed for user carol
+Mar 15 01:27:19 web01 systemd-logind[811]: Removed session 2201.
+Mar 15 01:32:00 web01 CRON[3096]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 01:32:01 web01 CRON[3100]: pam_unix(cron:session): session closed for user root
+Mar 15 01:41:56 web01 sshd[3777]: Accepted publickey for carol from 10.0.3.171 port 40463 ssh2: ED25519 SHA256:P3VscXs5QA+GLHKUF5rVn3PNVTi/KNr71M6duUrS1hM
+Mar 15 01:41:57 web01 sshd[3777]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 15 01:41:57 web01 systemd-logind[811]: New session 2210 of user carol.
+Mar 15 02:02:00 web01 CRON[3103]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 02:02:00 web01 sshd[7981]: Invalid user ftp from 192.0.2.102 port 35988
+Mar 15 02:02:00 web01 sshd[7981]: Failed password for invalid user ftp from 192.0.2.102 port 35988 ssh2
+Mar 15 02:02:00 web01 sshd[7981]: Connection closed by invalid user ftp 192.0.2.102 port 35988 [preauth]
+Mar 15 02:02:01 web01 CRON[3108]: pam_unix(cron:session): session closed for user root
+Mar 15 02:02:04 web01 sshd[7987]: Invalid user guest from 192.0.2.102 port 54479
+Mar 15 02:02:04 web01 sshd[7987]: Failed password for invalid user guest from 192.0.2.102 port 54479 ssh2
+Mar 15 02:02:04 web01 sshd[7987]: Connection closed by invalid user guest 192.0.2.102 port 54479 [preauth]
+Mar 15 02:02:07 web01 sshd[7995]: Invalid user ftp from 192.0.2.102 port 21996
+Mar 15 02:02:07 web01 sshd[7995]: Failed password for invalid user ftp from 192.0.2.102 port 21996 ssh2
+Mar 15 02:02:09 web01 sshd[7996]: Invalid user ftp from 192.0.2.102 port 36760
+Mar 15 02:02:09 web01 sshd[7996]: Failed password for invalid user ftp from 192.0.2.102 port 36760 ssh2
+Mar 15 02:02:13 web01 sshd[7997]: Invalid user nagios from 192.0.2.102 port 55263
+Mar 15 02:02:13 web01 sshd[7997]: Failed password for invalid user nagios from 192.0.2.102 port 55263 ssh2
+Mar 15 02:02:13 web01 sshd[7997]: Connection closed by invalid user nagios 192.0.2.102 port 55263 [preauth]
+Mar 15 02:02:15 web01 sshd[8004]: Invalid user oracle from 192.0.2.102 port 31211
+Mar 15 02:02:15 web01 sshd[8004]: Failed password for invalid user oracle from 192.0.2.102 port 31211 ssh2
+Mar 15 02:02:16 web01 sshd[8007]: Invalid user mysql from 192.0.2.102 port 20385
+Mar 15 02:02:16 web01 sshd[8007]: Failed password for invalid user mysql from 192.0.2.102 port 20385 ssh2
+Mar 15 02:02:16 web01 sshd[8007]: Connection closed by invalid user mysql 192.0.2.102 port 20385 [preauth]
+Mar 15 02:02:18 web01 sshd[8009]: Invalid user jenkins from 192.0.2.102 port 14694
+Mar 15 02:02:18 web01 sshd[8009]: Failed password for invalid user jenkins from 192.0.2.102 port 14694 ssh2
+Mar 15 02:02:18 web01 sshd[8009]: Connection closed by invalid user jenkins 192.0.2.102 port 14694 [preauth]
+Mar 15 02:02:21 web01 sshd[8018]: Invalid user admin from 192.0.2.102 port 43994
+Mar 15 02:02:21 web01 sshd[8018]: Failed password for invalid user admin from 192.0.2.102 port 43994 ssh2
+Mar 15 02:02:21 web01 sshd[8018]: Connection closed by invalid user admin 192.0.2.102 port 43994 [preauth]
+Mar 15 02:02:25 web01 sshd[8027]: Invalid user jenkins from 192.0.2.102 port 28718
+Mar 15 02:02:25 web01 sshd[8027]: Failed password for invalid user jenkins from 192.0.2.102 port 28718 ssh2
+Mar 15 02:02:27 web01 sshd[8029]: Invalid user user from 192.0.2.102 port 8348
+Mar 15 02:02:27 web01 sshd[8029]: Failed password for invalid user user from 192.0.2.102 port 8348 ssh2
+Mar 15 02:02:29 web01 sshd[8038]: Invalid user mysql from 192.0.2.102 port 1983
+Mar 15 02:02:29 web01 sshd[8038]: Failed password for invalid user mysql from 192.0.2.102 port 1983 ssh2
+Mar 15 02:02:29 web01 sshd[8038]: Connection closed by invalid user mysql 192.0.2.102 port 1983 [preauth]
+Mar 15 02:02:31 web01 sshd[8045]: Invalid user www from 192.0.2.102 port 59860
+Mar 15 02:02:31 web01 sshd[8045]: Failed password for invalid user www from 192.0.2.102 port 59860 ssh2
+Mar 15 02:02:31 web01 sshd[8045]: Connection closed by invalid user www 192.0.2.102 port 59860 [preauth]
+Mar 15 02:02:32 web01 sshd[8301]: Invalid user postgres from 192.0.2.102 port 5023
+Mar 15 02:02:32 web01 sshd[8301]: Failed password for invalid user postgres from 192.0.2.102 port 5023 ssh2
+Mar 15 02:02:32 web01 sshd[8301]: Connection closed by invalid user postgres 192.0.2.102 port 5023 [preauth]
+Mar 15 02:02:36 web01 sshd[8310]: Invalid user admin from 192.0.2.102 port 13071
+Mar 15 02:02:36 web01 sshd[8310]: Failed password for invalid user admin from 192.0.2.102 port 13071 ssh2
+Mar 15 02:02:40 web01 sshd[8311]: Invalid user pi from 192.0.2.102 port 41365
+Mar 15 02:02:40 web01 sshd[8311]: Failed password for invalid user pi from 192.0.2.102 port 41365 ssh2
+Mar 15 02:02:44 web01 sshd[8320]: Invalid user test from 192.0.2.102 port 58055
+Mar 15 02:02:44 web01 sshd[8320]: Failed password for invalid user test from 192.0.2.102 port 58055 ssh2
+Mar 15 02:02:47 web01 sshd[8327]: Invalid user root from 192.0.2.102 port 29526
+Mar 15 02:02:47 web01 sshd[8327]: Failed password for invalid user root from 192.0.2.102 port 29526 ssh2
+Mar 15 02:02:50 web01 sshd[8336]: Invalid user jenkins from 192.0.2.102 port 50898
+Mar 15 02:02:50 web01 sshd[8336]: Failed password for invalid user jenkins from 192.0.2.102 port 50898 ssh2
+Mar 15 02:02:53 web01 sshd[8341]: Invalid user pi from 192.0.2.102 port 42140
+Mar 15 02:02:53 web01 sshd[8341]: Failed password for invalid user pi from 192.0.2.102 port 42140 ssh2
+Mar 15 02:02:53 web01 sshd[8341]: Connection closed by invalid user pi 192.0.2.102 port 42140 [preauth]
+Mar 15 02:18:53 web01 sshd[5335]: Connection closed by 203.0.113.145 port 13851 [preauth]
+Mar 15 02:32:00 web01 CRON[3115]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 02:32:01 web01 CRON[3117]: pam_unix(cron:session): session closed for user root
+Mar 15 02:40:00 web01 sshd[7770]: Invalid user root from 192.0.2.11 port 41794
+Mar 15 02:40:00 web01 sshd[7770]: Failed password for invalid user root from 192.0.2.11 port 41794 ssh2
+Mar 15 02:40:02 web01 sshd[7777]: Invalid user root from 192.0.2.11 port 42845
+Mar 15 02:40:02 web01 sshd[7777]: Failed password for invalid user root from 192.0.2.11 port 42845 ssh2
+Mar 15 02:40:06 web01 sshd[7784]: Invalid user root from 192.0.2.11 port 15334
+Mar 15 02:40:06 web01 sshd[7784]: Failed password for invalid user root from 192.0.2.11 port 15334 ssh2
+Mar 15 02:40:06 web01 sshd[7784]: Connection closed by invalid user root 192.0.2.11 port 15334 [preauth]
+Mar 15 02:40:09 web01 sshd[7786]: Invalid user root from 192.0.2.11 port 3609
+Mar 15 02:40:09 web01 sshd[7786]: Failed password for invalid user root from 192.0.2.11 port 3609 ssh2
+Mar 15 02:40:10 web01 sshd[7791]: Invalid user root from 192.0.2.11 port 12536
+Mar 15 02:40:10 web01 sshd[7791]: Failed password for invalid user root from 192.0.2.11 port 12536 ssh2
+Mar 15 02:40:14 web01 sshd[7799]: Invalid user root from 192.0.2.11 port 63222
+Mar 15 02:40:14 web01 sshd[7799]: Failed password for invalid user root from 192.0.2.11 port 63222 ssh2
+Mar 15 02:40:16 web01 sshd[7804]: Invalid user root from 192.0.2.11 port 49768
+Mar 15 02:40:16 web01 sshd[7804]: Failed password for invalid user root from 192.0.2.11 port 49768 ssh2
+Mar 15 02:40:20 web01 sshd[7813]: Invalid user admin from 192.0.2.11 port 56387
+Mar 15 02:40:20 web01 sshd[7813]: Failed password for invalid user admin from 192.0.2.11 port 56387 ssh2
+Mar 15 02:40:24 web01 sshd[7814]: Invalid user admin from 192.0.2.11 port 52439
+Mar 15 02:40:24 web01 sshd[7814]: Failed password for invalid user admin from 192.0.2.11 port 52439 ssh2
+Mar 15 02:40:24 web01 sshd[7814]: Connection closed by invalid user admin 192.0.2.11 port 52439 [preauth]
+Mar 15 02:40:25 web01 sshd[7815]: Invalid user admin from 192.0.2.11 port 46085
+Mar 15 02:40:25 web01 sshd[7815]: Failed password for invalid user admin from 192.0.2.11 port 46085 ssh2
+Mar 15 02:40:27 web01 sshd[7823]: Invalid user admin from 192.0.2.11 port 18399
+Mar 15 02:40:27 web01 sshd[7823]: Failed password for invalid user admin from 192.0.2.11 port 18399 ssh2
+Mar 15 02:40:29 web01 sshd[7829]: Invalid user root from 192.0.2.11 port 9445
+Mar 15 02:40:29 web01 sshd[7829]: Failed password for invalid user root from 192.0.2.11 port 9445 ssh2
+Mar 15 02:40:29 web01 sshd[7829]: Connection closed by invalid user root 192.0.2.11 port 9445 [preauth]
+Mar 15 02:40:31 web01 sshd[7832]: Invalid user root from 192.0.2.11 port 27872
+Mar 15 02:40:31 web01 sshd[7832]: Failed password for invalid user root from 192.0.2.11 port 27872 ssh2
+Mar 15 02:40:31 web01 sshd[7832]: Connection closed by invalid user root 192.0.2.11 port 27872 [preauth]
+Mar 15 02:40:35 web01 sshd[7838]: Failed password for deploy from 192.0.2.11 port 27842 ssh2
+Mar 15 02:40:39 web01 sshd[7839]: Failed password for deploy from 192.0.2.11 port 32507 ssh2
+Mar 15 02:40:42 web01 sshd[7844]: Failed password for deploy from 192.0.2.11 port 60181 ssh2
+Mar 15 02:40:43 web01 sshd[7849]: Invalid user root from 192.0.2.11 port 61656
+Mar 15 02:40:43 web01 sshd[7849]: Failed password for invalid user root from 192.0.2.11 port 61656 ssh2
+Mar 15 02:40:44 web01 sshd[7851]: Invalid user admin from 192.0.2.11 port 30544
+Mar 15 02:40:44 web01 sshd[7851]: Failed password for invalid user admin from 192.0.2.11 port 30544 ssh2
+Mar 15 02:40:44 web01 sshd[7851]: Connection closed by invalid user admin 192.0.2.11 port 30544 [preauth]
+Mar 15 02:40:46 web01 sshd[7857]: Accepted password for deploy from 192.0.2.11 port 9804 ssh2
+Mar 15 02:40:47 web01 sshd[7857]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+Mar 15 02:41:54 web01 sshd[4094]: Accepted publickey for carol from 10.0.1.66 port 22812 ssh2: ED25519 SHA256:7qYDYhF4GWGj3PJvTDLNMYzFXCo0R3wigJ71xbsqUn0
+Mar 15 02:41:55 web01 sshd[4094]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 15 02:41:55 web01 systemd-logind[811]: New session 2218 of user carol.
+Mar 15 02:42:29 web01 sshd[5399]: Connection closed by 203.0.113.72 port 2078 [preauth]
+Mar 15 02:45:02 web01 sshd[3777]: pam_unix(sshd:session): session closed for user carol
+Mar 15 02:45:02 web01 systemd-logind[811]: Removed session 2210.
+Mar 15 03:02:00 web01 CRON[3122]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 03:02:01 web01 CRON[3131]: pam_unix(cron:session): session closed for user root
+Mar 15 03:08:06 web01 sshd[5104]: Connection closed by 203.0.113.171 port 32629 [preauth]
+Mar 15 03:17:00 web01 sshd[5415]: Accepted publickey for ops from 10.0.2.9 port 14981 ssh2: ED25519 SHA256:vgHga1xE/6A/JPxtPCtzWSazzUDLEdgykZeDYL40JAs
+Mar 15 03:17:01 web01 sshd[5415]: pam_unix(sshd:session): session opened for user ops by (uid=0)
+Mar 15 03:17:02 web01 sudo:    ops : TTY=pts/0 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx
+Mar 15 03:32:00 web01 CRON[3135]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 03:32:01 web01 CRON[3143]: pam_unix(cron:session): session closed for user root
+Mar 15 03:35:00 web01 sshd[5415]: pam_unix(sshd:session): session closed for user ops
+Mar 15 03:37:27 web01 sshd[4094]: pam_unix(sshd:session): session closed for user carol
+Mar 15 03:37:27 web01 systemd-logind[811]: Removed session 2218.
+Mar 15 04:02:00 web01 CRON[3148]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 04:02:01 web01 CRON[3154]: pam_unix(cron:session): session closed for user root
+Mar 15 04:24:23 web01 sshd[4139]: Accepted publickey for backup from 10.0.1.51 port 29498 ssh2: ED25519 SHA256:9qNy6fuvc2ab81VgU5ktKh4a8TnXUAZbamjrFoB0hBK
+Mar 15 04:24:24 web01 sshd[4139]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 15 04:24:24 web01 systemd-logind[811]: New session 2225 of user backup.
+Mar 15 04:32:00 web01 CRON[3157]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 04:32:01 web01 CRON[3165]: pam_unix(cron:session): session closed for user root
+Mar 15 04:42:17 web01 sshd[4415]: Connection closed by 203.0.113.181 port 19454 [preauth]
+Mar 15 04:51:27 web01 sshd[5145]: Connection closed by 203.0.113.114 port 30994 [preauth]
+Mar 15 05:02:00 web01 CRON[3174]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 05:02:01 web01 CRON[3177]: pam_unix(cron:session): session closed for user root
+Mar 15 05:13:56 web01 sshd[4139]: pam_unix(sshd:session): session closed for user backup
+Mar 15 05:13:56 web01 systemd-logind[811]: Removed session 2225.
+Mar 15 05:13:59 web01 sshd[4082]: Accepted publickey for carol from 10.0.2.97 port 43014 ssh2: ED25519 SHA256:o3aVT9h37ruMgbcNtaBi0tkAxFfFM8D+8mEb2iBCpP5
+Mar 15 05:14:00 web01 sshd[4082]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 15 05:14:00 web01 systemd-logind[811]: New session 2215 of user carol.
+Mar 15 05:32:00 web01 CRON[3178]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 05:32:01 web01 CRON[3184]: pam_unix(cron:session): session closed for user root
+Mar 15 05:47:53 web01 sshd[4171]: Connection closed by 203.0.113.26 port 36522 [preauth]
+Mar 15 06:01:33 web01 sshd[4526]: Connection closed by 203.0.113.79 port 28282 [preauth]
+Mar 15 06:02:00 web01 CRON[3190]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 06:02:01 web01 CRON[3194]: pam_unix(cron:session): session closed for user root
+Mar 15 06:25:24 web01 sshd[4082]: pam_unix(sshd:session): session closed for user carol
+Mar 15 06:25:24 web01 systemd-logind[811]: Removed session 2215.
+Mar 15 06:30:25 web01 sshd[4443]: Connection closed by 203.0.113.52 port 42326 [preauth]
+Mar 15 06:32:00 web01 CRON[3203]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 06:32:01 web01 CRON[3206]: pam_unix(cron:session): session closed for user root
+Mar 15 06:40:31 web01 sshd[5072]: Connection closed by 203.0.113.122 port 62950 [preauth]
+Mar 15 06:56:11 web01 sshd[4079]: Accepted password for backup from 10.0.2.35 port 61037 ssh2
+Mar 15 06:56:12 web01 sshd[4079]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 15 06:56:12 web01 systemd-logind[811]: New session 2214 of user backup.
+Mar 15 07:02:00 web01 CRON[3211]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 07:02:01 web01 CRON[3218]: pam_unix(cron:session): session closed for user root
+Mar 15 07:05:04 web01 sshd[4079]: pam_unix(sshd:session): session closed for user backup
+Mar 15 07:05:04 web01 systemd-logind[811]: Removed session 2214.
+Mar 15 07:19:11 web01 sshd[5404]: Connection closed by 203.0.113.64 port 13164 [preauth]
+Mar 15 07:21:53 web01 sshd[4146]: Accepted password for bob from 10.0.4.212 port 14221 ssh2
+Mar 15 07:21:54 web01 sshd[4146]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+Mar 15 07:21:54 web01 systemd-logind[811]: New session 2226 of user bob.
+Mar 15 07:32:00 web01 CRON[3221]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 07:32:01 web01 CRON[3223]: pam_unix(cron:session): session closed for user root
+Mar 15 07:36:50 web01 sshd[5339]: Connection closed by 203.0.113.111 port 14703 [preauth]
+Mar 15 08:02:00 web01 CRON[3230]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 08:02:01 web01 CRON[3239]: pam_unix(cron:session): session closed for user root
+Mar 15 08:18:35 web01 sudo:  bob : TTY=pts/0 ; PWD=/home/bob ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 08:19:22 web01 sshd[4146]: pam_unix(sshd:session): session closed for user bob
+Mar 15 08:19:22 web01 systemd-logind[811]: Removed session 2226.
+Mar 15 08:19:52 web01 sshd[5061]: Connection closed by 203.0.113.214 port 60594 [preauth]
+Mar 15 08:26:04 web01 sshd[3749]: Accepted publickey for bob from 10.0.1.182 port 47851 ssh2: ED25519 SHA256:TzCsk+xSV1EodknCRLRPzgM6ajmxprGMh225okd0vvb
+Mar 15 08:26:05 web01 sshd[3749]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+Mar 15 08:26:05 web01 systemd-logind[811]: New session 2203 of user bob.
+Mar 15 08:32:00 web01 CRON[3246]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 08:32:01 web01 CRON[3253]: pam_unix(cron:session): session closed for user root
+Mar 15 08:35:33 web01 sshd[3749]: pam_unix(sshd:session): session closed for user bob
+Mar 15 08:35:33 web01 systemd-logind[811]: Removed session 2203.
+Mar 15 09:02:00 web01 CRON[3255]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 09:02:01 web01 CRON[3256]: pam_unix(cron:session): session closed for user root
+Mar 15 09:21:02 web01 sshd[4395]: Connection closed by 203.0.113.205 port 14502 [preauth]
+Mar 15 09:32:00 web01 CRON[3264]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 09:32:01 web01 CRON[3265]: pam_unix(cron:session): session closed for user root
+Mar 15 09:44:44 web01 sshd[4487]: Connection closed by 203.0.113.79 port 57067 [preauth]
+Mar 15 09:53:39 web01 sshd[4483]: Connection closed by 203.0.113.197 port 44713 [preauth]
+Mar 15 10:02:00 web01 CRON[3270]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 10:02:01 web01 CRON[3273]: pam_unix(cron:session): session closed for user root
+Mar 15 10:07:47 web01 sshd[4086]: Accepted publickey for bob from 10.0.2.179 port 31156 ssh2: ED25519 SHA256:3EPGM+2FSpF0fsbAveUv3ib6xi7J8LfbtRUKjaQy9uV
+Mar 15 10:07:48 web01 sshd[4086]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+Mar 15 10:07:48 web01 systemd-logind[811]: New session 2216 of user bob.
+Mar 15 10:32:00 web01 CRON[3281]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 10:32:01 web01 CRON[3283]: pam_unix(cron:session): session closed for user root
+Mar 15 11:02:00 web01 CRON[3286]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 11:02:01 web01 CRON[3294]: pam_unix(cron:session): session closed for user root
+Mar 15 11:03:00 web01 sshd[7863]: Invalid user user from 198.51.100.16 port 15789
+Mar 15 11:03:00 web01 sshd[7863]: Failed password for invalid user user from 198.51.100.16 port 15789 ssh2
+Mar 15 11:08:24 web01 sshd[7867]: Invalid user admin from 198.51.100.16 port 37379
+Mar 15 11:08:24 web01 sshd[7867]: Failed password for invalid user admin from 198.51.100.16 port 37379 ssh2
+Mar 15 11:12:18 web01 sshd[7869]: Invalid user jenkins from 198.51.100.16 port 34455
+Mar 15 11:12:18 web01 sshd[7869]: Failed password for invalid user jenkins from 198.51.100.16 port 34455 ssh2
+Mar 15 11:12:18 web01 sshd[7869]: Connection closed by invalid user jenkins 198.51.100.16 port 34455 [preauth]
+Mar 15 11:18:26 web01 sshd[7872]: Invalid user pi from 198.51.100.16 port 17513
+Mar 15 11:18:26 web01 sshd[7872]: Failed password for invalid user pi from 198.51.100.16 port 17513 ssh2
+Mar 15 11:18:26 web01 sshd[7872]: Connection closed by invalid user pi 198.51.100.16 port 17513 [preauth]
+Mar 15 11:18:46 web01 sshd[4086]: pam_unix(sshd:session): session closed for user bob
+Mar 15 11:18:46 web01 systemd-logind[811]: Removed session 2216.
+Mar 15 11:22:32 web01 sshd[5412]: Connection closed by 203.0.113.73 port 22679 [preauth]
+Mar 15 11:23:20 web01 sshd[7876]: Invalid user mysql from 198.51.100.16 port 9835
+Mar 15 11:23:20 web01 sshd[7876]: Failed password for invalid user mysql from 198.51.100.16 port 9835 ssh2
+Mar 15 11:28:02 web01 sshd[7878]: Invalid user test from 198.51.100.16 port 63826
+Mar 15 11:28:02 web01 sshd[7878]: Failed password for invalid user test from 198.51.100.16 port 63826 ssh2
+Mar 15 11:28:02 web01 sshd[7878]: Connection closed by invalid user test 198.51.100.16 port 63826 [preauth]
+Mar 15 11:30:16 web01 sshd[5353]: Connection closed by 203.0.113.105 port 40162 [preauth]
+Mar 15 11:31:23 web01 sshd[7887]: Invalid user mysql from 198.51.100.16 port 47382
+Mar 15 11:31:23 web01 sshd[7887]: Failed password for invalid user mysql from 198.51.100.16 port 47382 ssh2
+Mar 15 11:32:00 web01 CRON[3302]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 11:32:01 web01 CRON[3304]: pam_unix(cron:session): session closed for user root
+Mar 15 11:36:27 web01 sshd[7889]: Invalid user ubuntu from 198.51.100.16 port 59315
+Mar 15 11:36:27 web01 sshd[7889]: Failed password for invalid user ubuntu from 198.51.100.16 port 59315 ssh2
+Mar 15 11:42:34 web01 sshd[7894]: Invalid user user from 198.51.100.16 port 57835
+Mar 15 11:42:34 web01 sshd[7894]: Failed password for invalid user user from 198.51.100.16 port 57835 ssh2
+Mar 15 11:42:34 web01 sshd[7894]: Connection closed by invalid user user 198.51.100.16 port 57835 [preauth]
+Mar 15 11:47:33 web01 sshd[5361]: Connection closed by 203.0.113.25 port 12726 [preauth]
+Mar 15 11:57:08 web01 sshd[5086]: Connection closed by 203.0.113.124 port 18634 [preauth]
+Mar 15 11:58:19 web01 sshd[5067]: Connection closed by 203.0.113.113 port 22077 [preauth]
+Mar 15 12:02:00 web01 CRON[3307]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 12:02:01 web01 CRON[3308]: pam_unix(cron:session): session closed for user root
+Mar 15 12:18:29 web01 sshd[4496]: Connection closed by 203.0.113.18 port 17822 [preauth]
+Mar 15 12:23:07 web01 sshd[5141]: Connection closed by 203.0.113.3 port 10630 [preauth]
+Mar 15 12:32:00 web01 CRON[3315]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 12:32:01 web01 CRON[3320]: pam_unix(cron:session): session closed for user root
+Mar 15 12:50:35 web01 sshd[4915]: Connection closed by 203.0.113.193 port 1823 [preauth]
+Mar 15 13:02:00 web01 CRON[3322]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 13:02:01 web01 CRON[3326]: pam_unix(cron:session): session closed for user root
+Mar 15 13:08:07 web01 sshd[5096]: Connection closed by 203.0.113.114 port 14411 [preauth]
+Mar 15 13:09:22 web01 sshd[4406]: Connection closed by 203.0.113.194 port 45936 [preauth]
+Mar 15 13:13:51 web01 sshd[5345]: Connection closed by 203.0.113.50 port 41659 [preauth]
+Mar 15 13:32:00 web01 CRON[3327]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 13:32:01 web01 CRON[3330]: pam_unix(cron:session): session closed for user root
+Mar 15 13:40:10 web01 sshd[4511]: Connection closed by 203.0.113.53 port 25183 [preauth]
+Mar 15 14:02:00 web01 CRON[3338]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 14:02:01 web01 CRON[3341]: pam_unix(cron:session): session closed for user root
+Mar 15 14:32:00 web01 CRON[3343]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 14:32:01 web01 CRON[3345]: pam_unix(cron:session): session closed for user root
+Mar 15 14:48:13 web01 sshd[3785]: Accepted publickey for backup from 10.0.3.166 port 55511 ssh2: ED25519 SHA256:1g4KV9KWj8p4gcn3wUDgTHwuVepB58xFU1aikSoBVqh
+Mar 15 14:48:14 web01 sshd[3785]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 15 14:48:14 web01 systemd-logind[811]: New session 2211 of user backup.
+Mar 15 15:02:00 web01 CRON[3351]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 15:02:01 web01 CRON[3354]: pam_unix(cron:session): session closed for user root
+Mar 15 15:32:00 web01 CRON[3356]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 15:32:01 web01 CRON[3357]: pam_unix(cron:session): session closed for user root
+Mar 15 15:38:11 web01 sshd[5138]: Connection closed by 203.0.113.148 port 44369 [preauth]
+Mar 15 15:53:00 web01 sshd[8343]: Invalid user ftp from 198.51.100.111 port 1436
+Mar 15 15:53:00 web01 sshd[8343]: Failed password for invalid user ftp from 198.51.100.111 port 1436 ssh2
+Mar 15 15:57:06 web01 sshd[3785]: pam_unix(sshd:session): session closed for user backup
+Mar 15 15:57:06 web01 systemd-logind[811]: Removed session 2211.
+Mar 15 15:59:44 web01 sshd[5131]: Connection closed by 203.0.113.97 port 41514 [preauth]
+Mar 15 15:59:46 web01 sshd[8347]: Invalid user mysql from 198.51.100.111 port 44202
+Mar 15 15:59:46 web01 sshd[8347]: Failed password for invalid user mysql from 198.51.100.111 port 44202 ssh2
+Mar 15 16:02:00 web01 CRON[3363]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 16:02:01 web01 CRON[3368]: pam_unix(cron:session): session closed for user root
+Mar 15 16:03:27 web01 sshd[8354]: Invalid user mysql from 198.51.100.111 port 57394
+Mar 15 16:03:27 web01 sshd[8354]: Failed password for invalid user mysql from 198.51.100.111 port 57394 ssh2
+Mar 15 16:03:27 web01 sshd[8354]: Connection closed by invalid user mysql 198.51.100.111 port 57394 [preauth]
+Mar 15 16:06:45 web01 sshd[8356]: Invalid user www from 198.51.100.111 port 38082
+Mar 15 16:06:45 web01 sshd[8356]: Failed password for invalid user www from 198.51.100.111 port 38082 ssh2
+Mar 15 16:10:00 web01 sshd[8358]: Invalid user nagios from 198.51.100.111 port 41139
+Mar 15 16:10:00 web01 sshd[8358]: Failed password for invalid user nagios from 198.51.100.111 port 41139 ssh2
+Mar 15 16:14:02 web01 sshd[8365]: Invalid user postgres from 198.51.100.111 port 9781
+Mar 15 16:14:02 web01 sshd[8365]: Failed password for invalid user postgres from 198.51.100.111 port 9781 ssh2
+Mar 15 16:14:08 web01 sshd[4110]: Accepted password for ops from 10.0.2.71 port 29464 ssh2
+Mar 15 16:14:09 web01 sshd[4110]: pam_unix(sshd:session): session opened for user ops by (uid=0)
+Mar 15 16:14:09 web01 systemd-logind[811]: New session 2221 of user ops.
+Mar 15 16:16:45 web01 sshd[8370]: Invalid user nagios from 198.51.100.111 port 47080
+Mar 15 16:16:45 web01 sshd[8370]: Failed password for invalid user nagios from 198.51.100.111 port 47080 ssh2
+Mar 15 16:16:45 web01 sshd[8370]: Connection closed by invalid user nagios 198.51.100.111 port 47080 [preauth]
+Mar 15 16:19:29 web01 sshd[8372]: Invalid user oracle from 198.51.100.111 port 61347
+Mar 15 16:19:29 web01 sshd[8372]: Failed password for invalid user oracle from 198.51.100.111 port 61347 ssh2
+Mar 15 16:24:37 web01 sshd[8374]: Invalid user user from 198.51.100.111 port 64603
+Mar 15 16:24:37 web01 sshd[8374]: Failed password for invalid user user from 198.51.100.111 port 64603 ssh2
+Mar 15 16:24:37 web01 sshd[8374]: Connection closed by invalid user user 198.51.100.111 port 64603 [preauth]
+Mar 15 16:31:59 web01 sudo:  ops : TTY=pts/0 ; PWD=/home/ops ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 16:32:00 web01 CRON[3370]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 16:32:01 web01 CRON[3375]: pam_unix(cron:session): session closed for user root
+Mar 15 16:32:53 web01 sshd[8379]: Invalid user ftp from 198.51.100.111 port 49959
+Mar 15 16:32:53 web01 sshd[8379]: Failed password for invalid user ftp from 198.51.100.111 port 49959 ssh2
+Mar 15 16:39:26 web01 sshd[8388]: Invalid user mysql from 198.51.100.111 port 45646
+Mar 15 16:39:26 web01 sshd[8388]: Failed password for invalid user mysql from 198.51.100.111 port 45646 ssh2
+Mar 15 16:39:26 web01 sshd[8388]: Connection closed by invalid user mysql 198.51.100.111 port 45646 [preauth]
+Mar 15 16:43:08 web01 sshd[8393]: Invalid user test from 198.51.100.111 port 26097
+Mar 15 16:43:08 web01 sshd[8393]: Failed password for invalid user test from 198.51.100.111 port 26097 ssh2
+Mar 15 16:43:08 web01 sshd[8393]: Connection closed by invalid user test 198.51.100.111 port 26097 [preauth]
+Mar 15 16:45:20 web01 sshd[8401]: Invalid user postgres from 198.51.100.111 port 56954
+Mar 15 16:45:20 web01 sshd[8401]: Failed password for invalid user postgres from 198.51.100.111 port 56954 ssh2
+Mar 15 16:45:20 web01 sshd[8401]: Connection closed by invalid user postgres 198.51.100.111 port 56954 [preauth]
+Mar 15 16:52:33 web01 sshd[8406]: Invalid user mysql from 198.51.100.111 port 24932
+Mar 15 16:52:33 web01 sshd[8406]: Failed password for invalid user mysql from 198.51.100.111 port 24932 ssh2
+Mar 15 16:54:54 web01 sshd[8408]: Accepted password for backup from 198.51.100.111 port 46574 ssh2
+Mar 15 16:54:55 web01 sshd[8408]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 15 17:02:00 web01 CRON[3383]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 17:02:01 web01 CRON[3391]: pam_unix(cron:session): session closed for user root
+Mar 15 17:05:32 web01 sshd[4093]: Accepted publickey for carol from 10.0.2.148 port 43292 ssh2: ED25519 SHA256:27uTwbB0NRjQJyqMt/kLv9knhAMJ9mWCtLtrB0fMr+Y
+Mar 15 17:05:33 web01 sshd[4093]: pam_unix(sshd:session): session opened for user carol by (uid=0)
+Mar 15 17:05:33 web01 systemd-logind[811]: New session 2217 of user carol.
+Mar 15 17:15:02 web01 sshd[4110]: pam_unix(sshd:session): session closed for user ops
+Mar 15 17:15:02 web01 systemd-logind[811]: Removed session 2221.
+Mar 15 17:27:30 web01 sudo:  carol : TTY=pts/0 ; PWD=/home/carol ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 17:32:00 web01 CRON[3398]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 17:32:01 web01 CRON[3399]: pam_unix(cron:session): session closed for user root
+Mar 15 17:42:00 web01 sshd[3743]: Accepted publickey for ops from 10.0.3.234 port 32751 ssh2: ED25519 SHA256:q7mjjHtor+Hypxubu487iqTpKwSugdCXkX9jukodxb8
+Mar 15 17:42:01 web01 sshd[3743]: pam_unix(sshd:session): session opened for user ops by (uid=0)
+Mar 15 17:42:01 web01 systemd-logind[811]: New session 2202 of user ops.
+Mar 15 18:02:00 web01 CRON[3404]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 18:02:01 web01 CRON[3407]: pam_unix(cron:session): session closed for user root
+Mar 15 18:15:30 web01 sshd[4093]: pam_unix(sshd:session): session closed for user carol
+Mar 15 18:15:30 web01 systemd-logind[811]: Removed session 2217.
+Mar 15 18:19:23 web01 sshd[4461]: Connection closed by 203.0.113.3 port 43964 [preauth]
+Mar 15 18:26:16 web01 sshd[5088]: Connection closed by 203.0.113.194 port 22567 [preauth]
+Mar 15 18:32:00 web01 CRON[3412]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 18:32:01 web01 CRON[3418]: pam_unix(cron:session): session closed for user root
+Mar 15 19:01:27 web01 sshd[5325]: Connection closed by 203.0.113.216 port 23671 [preauth]
+Mar 15 19:02:00 web01 CRON[3424]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 19:02:01 web01 CRON[3431]: pam_unix(cron:session): session closed for user root
+Mar 15 19:04:10 web01 sshd[4432]: Connection closed by 203.0.113.9 port 4608 [preauth]
+Mar 15 19:05:04 web01 sshd[3743]: pam_unix(sshd:session): session closed for user ops
+Mar 15 19:05:04 web01 systemd-logind[811]: Removed session 2202.
+Mar 15 19:32:00 web01 CRON[3436]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 19:32:00 web01 sshd[4519]: Connection closed by 203.0.113.49 port 40163 [preauth]
+Mar 15 19:32:01 web01 CRON[3443]: pam_unix(cron:session): session closed for user root
+Mar 15 20:02:00 web01 CRON[3451]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 20:02:01 web01 CRON[3458]: pam_unix(cron:session): session closed for user root
+Mar 15 20:32:00 web01 CRON[3464]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 20:32:01 web01 CRON[3472]: pam_unix(cron:session): session closed for user root
+Mar 15 21:02:00 web01 CRON[3473]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 21:02:01 web01 CRON[3478]: pam_unix(cron:session): session closed for user root
+Mar 15 21:28:31 web01 sshd[3768]: Accepted publickey for bob from 10.0.2.199 port 62247 ssh2: ED25519 SHA256:7zvrK/7XwdNxM7HdabWnEh8kSnbX9z1USRFARnFiC7a
+Mar 15 21:28:32 web01 sshd[3768]: pam_unix(sshd:session): session opened for user bob by (uid=0)
+Mar 15 21:28:32 web01 systemd-logind[811]: New session 2207 of user bob.
+Mar 15 21:32:00 web01 CRON[3480]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 21:32:01 web01 CRON[3481]: pam_unix(cron:session): session closed for user root
+Mar 15 22:02:00 web01 CRON[3489]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 22:02:01 web01 CRON[3491]: pam_unix(cron:session): session closed for user root
+Mar 15 22:04:04 web01 sshd[5143]: Connection closed by 203.0.113.60 port 59081 [preauth]
+Mar 15 22:06:46 web01 sshd[4103]: Accepted publickey for ops from 10.0.3.116 port 16405 ssh2: ED25519 SHA256:DPe3tvs7xTog1GJDep/dVVSgFumGMedm+qpooeC2nHF
+Mar 15 22:06:47 web01 sshd[4103]: pam_unix(sshd:session): session opened for user ops by (uid=0)
+Mar 15 22:06:47 web01 systemd-logind[811]: New session 2220 of user ops.
+Mar 15 22:10:23 web01 sshd[4103]: pam_unix(sshd:session): session closed for user ops
+Mar 15 22:10:23 web01 systemd-logind[811]: Removed session 2220.
+Mar 15 22:12:18 web01 sshd[3760]: Accepted password for alice from 10.0.2.197 port 45349 ssh2
+Mar 15 22:12:19 web01 sshd[3760]: pam_unix(sshd:session): session opened for user alice by (uid=0)
+Mar 15 22:12:19 web01 systemd-logind[811]: New session 2206 of user alice.
+Mar 15 22:14:06 web01 sudo:  alice : TTY=pts/1 ; PWD=/home/alice ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 22:14:24 web01 sshd[3768]: pam_unix(sshd:session): session closed for user bob
+Mar 15 22:14:24 web01 systemd-logind[811]: Removed session 2207.
+Mar 15 22:19:50 web01 sshd[3760]: pam_unix(sshd:session): session closed for user alice
+Mar 15 22:19:50 web01 systemd-logind[811]: Removed session 2206.
+Mar 15 22:32:00 web01 CRON[3496]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 22:32:01 web01 CRON[3498]: pam_unix(cron:session): session closed for user root
+Mar 15 22:57:23 web01 sshd[5105]: Connection closed by 203.0.113.44 port 63833 [preauth]
+Mar 15 23:02:00 web01 CRON[3504]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 23:02:01 web01 CRON[3512]: pam_unix(cron:session): session closed for user root
+Mar 15 23:03:48 web01 sshd[4451]: Connection closed by 203.0.113.177 port 51061 [preauth]
+Mar 15 23:14:25 web01 sshd[4126]: Accepted password for backup from 10.0.1.166 port 9233 ssh2
+Mar 15 23:14:26 web01 sshd[4126]: pam_unix(sshd:session): session opened for user backup by (uid=0)
+Mar 15 23:14:26 web01 systemd-logind[811]: New session 2223 of user backup.
+Mar 15 23:32:00 web01 CRON[3730]: pam_unix(cron:session): session opened for user root by (uid=0)
+Mar 15 23:32:01 web01 CRON[3733]: pam_unix(cron:session): session closed for user root
+Mar 15 23:37:47 web01 sudo:  backup : TTY=pts/3 ; PWD=/home/backup ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+Mar 15 23:41:33 web01 sshd[4126]: pam_unix(sshd:session): session closed for user backup
+Mar 15 23:41:33 web01 systemd-logind[811]: Removed session 2223.

@@ -6,6 +6,8 @@ can never disagree about the numbers.
 import os
 from dataclasses import dataclass, field
 
+import yaml
+
 from .correlation import correlate
 from .detections import load_rules, run_detections
 from .parsers import parse_auth_file, parse_web_file
@@ -44,9 +46,26 @@ def load_events(log_dir, year, log=print):
     return events, unparsed
 
 
+def apply_dataset_context(rules, log_dir, log=lambda *_: None):
+    """Merge <log_dir>/allowlist.yaml (known, authorised sources) into rules['allowlist'].
+
+    This is operator-supplied asset context, like an IDS suppression list; the tool
+    cannot infer by itself that a scanner is authorised."""
+    path = os.path.join(log_dir, "allowlist.yaml")
+    if not os.path.exists(path):
+        return []
+    with open(path, encoding="utf-8") as fh:
+        entries = (yaml.safe_load(fh) or {}).get("allowlist") or []
+    rules["allowlist"] = list(rules.get("allowlist") or []) + entries
+    log(f"[context] allowlist.yaml: {len(entries)} authorised source(s)")
+    return entries
+
+
 def run(log_dir, rules_path="rules.yaml", year=2025, verify=True, do_correlate=True,
-        log=lambda *_: None):
+        log=lambda *_: None, use_allowlist=True):
     rules = load_rules(rules_path)
+    if use_allowlist:
+        apply_dataset_context(rules, log_dir, log)
     events, unparsed = load_events(log_dir, year, log)
     alerts = run_detections(events, rules)
     incidents = []

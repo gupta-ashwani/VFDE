@@ -9,6 +9,8 @@ Verdicts
 Every verdict carries a reason string. Limitation (by design): reflected XSS
 cannot be confirmed from server logs alone, so XSS is capped at Attempted.
 """
+import ipaddress
+import re
 from collections import defaultdict
 from datetime import timedelta
 from posixpath import splitext
@@ -33,12 +35,17 @@ class _Ctx:
         self.alerts_by_ip = defaultdict(list)
         for a in alerts:
             self.alerts_by_ip[a.src_ip].append(a)
+        self.corroborate = True        # pass 1 runs with this off
+        self.dismissed = set()         # id() of alerts judged Noise in pass 1
 
     def evidence_events(self, alert):
         return [self.raw[r] for r in alert.evidence if r in self.raw]
 
-        self.corroborate = True        # pass 1 runs with this off
-        self.dismissed = set()         # id() of alerts judged Noise in pass 1
+    def login_succeeded_after(self, alert):
+        """Did this IP get an accepted login shortly after the guessing alert?"""
+        horizon = alert.ts + timedelta(seconds=self.cfg["login_success_lookahead_seconds"])
+        return any(e.action == "accepted_login" and alert.ts <= e.ts <= horizon
+                   for e in self.events_by_ip[alert.src_ip])
 
     def other_rules(self, alert, exclude=()):
         """Rules from the same IP that can corroborate this alert. Alerts already
@@ -69,6 +76,19 @@ def _impact(ev, ctx):
     return None
 
 
+def _executable_xss(alert, ctx):
+    """Return the matched snippet if the request carries something that would execute
+    (a call, cookie access, an event handler, a javascript: URL), else None."""
+    rxs = [re.compile(p) for p in ctx.cfg["xss_executable_patterns"]]
+    for ev in ctx.evidence_events(alert):
+        text = f"{ev.path or ''} {ev.query or ''}"
+        for rx in rxs:
+            m = rx.search(text)
+            if m:
+                return m.group(0)[:30]
+    return None
+
+
 # ---------- per-rule verifiers ----------
 
 def verify_pattern(alert, ctx):
@@ -91,8 +111,13 @@ def verify_pattern(alert, ctx):
             return _result("Attempted",
                            f"{n} XSS probes in {c['cluster_window_seconds']}s; reflected XSS "
                            f"cannot be confirmed from server logs{extra}")
-        return _result("Noise", "single XSS-like string, no repeated probing; could be a "
-                                "user discussing markup")
+        payload = _executable_xss(alert, ctx)
+        if payload:
+            return _result("Attempted", f"single request carrying an executable XSS payload "
+                                        f"({payload}); reflected XSS cannot be confirmed from "
+                                        f"server logs{extra}")
+        return _result("Noise", "single XSS-like string with no executable payload and no "
+                                "repeated probing; could be a user discussing markup")
 
     if impacts and n >= c["cluster_attempted"]:
         return _result("Confirmed", f"{n} probes in burst and impact evidence: {impacts[0]}{extra}",
@@ -122,16 +147,17 @@ def verify_brute_force(alert, ctx):
     c = ctx.cfg
     evs = ctx.evidence_events(alert)
     users, avg, automated = _auth_profile(evs, c)
-    succeeded = any(a.rule_id == "success_after_failures" and a.ts >= alert.ts
-                    for a in ctx.alerts_by_ip[alert.src_ip])
+    succeeded = (ctx.login_succeeded_after(alert)
+                 or any(a.rule_id == "success_after_failures" and a.ts >= alert.ts
+                        for a in ctx.alerts_by_ip[alert.src_ip]))
     pace = f"{avg:.1f}s apart" if avg is not None else "n/a"
     if not automated:
         return _result("Noise", f"{len(evs)} failures for {len(users)} user(s), {pace}: "
                                 f"human-paced, consistent with typos")
     if succeeded:
-        return _result("Confirmed", f"scripted guessing ({len(users)} usernames, {pace}) "
+        return _result("Confirmed", f"credential guessing ({len(users)} usernames, {pace}) "
                                     f"followed by a successful login from the same IP")
-    return _result("Attempted", f"scripted guessing ({len(users)} usernames, {pace}); "
+    return _result("Attempted", f"credential guessing ({len(users)} usernames, {pace}); "
                                 f"no successful login seen")
 
 
@@ -162,6 +188,18 @@ def verify_scan_404(alert, ctx):
         return _result("Likely", f"{len(evs)} 404s on non-asset paths with a known scanner "
                                  f"user-agent from the same IP")
     return _result("Attempted", f"{len(evs)} 404s on non-asset paths; enumeration pattern")
+
+
+def verify_sensitive_paths(alert, ctx):
+    c = ctx.cfg
+    paths = {e.path for e in ctx.evidence_events(alert)}
+    others = ctx.other_rules(alert, exclude={"off_hours_login"})
+    if "scanner_user_agent" in others or len(paths) >= c["sensitive_likely_paths"]:
+        why = ("with a known scanner user-agent" if "scanner_user_agent" in others
+               else f"{len(paths)} distinct sensitive paths")
+        return _result("Likely", f"sweep of sensitive paths refused/missing, {why}")
+    return _result("Attempted", f"{len(paths)} distinct sensitive paths refused/missing; "
+                                f"none was served")
 
 
 def verify_scanner_ua(alert, ctx):
@@ -197,6 +235,8 @@ VERIFIERS = {
     "xss_pattern": verify_pattern,
     "path_traversal": verify_pattern,
     "brute_force": verify_brute_force,
+    "slow_brute_force": verify_brute_force,
+    "sensitive_path_probe": verify_sensitive_paths,
     "success_after_failures": verify_success_after_failures,
     "scan_404": verify_scan_404,
     "scanner_user_agent": verify_scanner_ua,
@@ -205,15 +245,39 @@ VERIFIERS = {
 }
 
 
+def _allowlist(rules):
+    out = []
+    for item in rules.get("allowlist") or []:
+        out.append((ipaddress.ip_network(str(item["source"]), strict=False),
+                    item.get("reason", "allowlisted")))
+    return out
+
+
+def _allowed(ip, allow):
+    try:
+        addr = ipaddress.ip_address(ip)
+    except ValueError:
+        return None                     # not an IP (e.g. "local" for sudo): never allowlisted
+    return next((reason for net, reason in allow if addr in net), None)
+
+
 def verify_alerts(alerts, events, rules):
-    """Annotate each alert with verdict / reason / confidence (in place) and return them."""
+    """Annotate each alert with verdict / reason / confidence (in place) and return them.
+
+    Alerts from allowlisted sources stay in the raw list but are judged Noise with the
+    operator's reason, so the suppression is visible and auditable."""
     cfg = rules["verification"]
     ctx = _Ctx(events, alerts, cfg)
+    allow = _allowlist(rules)
 
     def run_pass():
         for a in alerts:
             fn = VERIFIERS.get(a.rule_id)
-            if fn is None:
+            reason = _allowed(a.src_ip, allow) if allow else None
+            if reason:
+                a.verdict, a.reason, a.confidence = _result(
+                    "Noise", f"source {a.src_ip} is allowlisted: {reason}")
+            elif fn is None:
                 a.verdict, a.reason, a.confidence = "Attempted", "no verifier for this rule", 0.5
             else:
                 a.verdict, a.reason, a.confidence = fn(a, ctx)
