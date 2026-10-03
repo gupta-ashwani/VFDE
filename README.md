@@ -76,14 +76,20 @@ gaps, which were then fixed (see below). Both sets of numbers are kept:
 
 | Metric (verified alerts) | Before fixes (frozen hold-out) | After fixes | After fixes + operator allowlist |
 |---|---|---|---|
+| Alerts (raw → verified) | 79 → 72 | 101 → 95 | 101 → 89 |
 | Episode recall | 67.7% | 93.5% | 93.5% |
 | Alert precision | 93.1% | 93.7% | 100% |
 | False positives (raw → verified) | 11 → 5 | 12 → 6 | 12 → 0 |
 | Precision of `Confirmed` alerts | 89.7% | 91.4% | 100% |
 | Incidents (false incidents) | 19 (1) | 29 (1) | 28 (0) |
+| Raw alerts per incident | 4.2 | 3.5 | 3.6 |
 
 Raw rules alone reached 71.0% recall before the fixes, so the verifier had also
 suppressed a real attack (a single `<script>alert(1)</script>` request).
+
+![Evaluation tab on the lab dataset](docs/screenshots/lab_v2_evaluation.png)
+
+*Dashboard Evaluation tab with the lab dataset uploaded and no allowlist, matching the "After fixes" column.*
 
 What the hold-out run found, and what changed:
 

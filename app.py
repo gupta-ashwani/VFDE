@@ -208,7 +208,7 @@ def analyse(log_dir, year, stamp):
 
 
 def stamp_of(log_dir):
-    paths = [os.path.join(log_dir, n) for n in ("access.log", "auth.log", "ground_truth.csv")]
+    paths = [os.path.join(log_dir, n) for n in ("access.log", "auth.log", "ground_truth.csv", "allowlist.yaml")]
     paths.append(os.path.join(ROOT, "rules.yaml"))
     return tuple(os.path.getmtime(p) if os.path.exists(p) else 0 for p in paths)
 
@@ -237,7 +237,10 @@ with st.sidebar:
         up = {"access.log": st.file_uploader("nginx access.log", help="vfde log format, see main panel"),
               "auth.log": st.file_uploader("auth.log", help="Linux sshd / sudo syslog"),
               "ground_truth.csv": st.file_uploader("ground_truth.csv (optional)",
-                                                   help="enables the Evaluation tab")}
+                                                   help="enables the Evaluation tab"),
+              "allowlist.yaml": st.file_uploader("allowlist.yaml (optional)",
+                                                 help="known, authorised sources, e.g. your own "
+                                                      "vulnerability scanner. Judged Noise with a visible reason.")}
         year = st.number_input("Year for auth.log", 2000, 2100, 2025,
                                help="syslog timestamps carry no year")
         if up["access.log"] or up["auth.log"]:
@@ -251,7 +254,7 @@ if source == "Upload logs" and log_dir is None:
     html('<div class="empty"><h3>Upload logs to start the analysis</h3>'
          '<p>Use the uploaders in the sidebar. At least one of <span class="mono">access.log</span> or '
          '<span class="mono">auth.log</span> is required; <span class="mono">ground_truth.csv</span> is optional '
-         'and only unlocks the Evaluation tab.</p>'
+         'and only unlocks the Evaluation tab; <span class="mono">allowlist.yaml</span> is optional too.</p>'
          '<div class="side-h">access.log: nginx line with request time</div>'
          f'<div class="ev mono">{e(SAMPLE_WEB)}</div>'
          '<div class="side-h" style="margin-top:14px">auth.log: sshd / sudo syslog</div>'
@@ -282,7 +285,8 @@ with st.sidebar:
          f'<span class="k">Events</span><span class="v">{len(result.events):,}</span>'
          f'<span class="k">From</span><span class="v mono">{min(times):%Y-%m-%d %H:%M}</span>'
          f'<span class="k">To</span><span class="v mono">{max(times):%Y-%m-%d %H:%M}</span>'
-         f'<span class="k">Truth</span><span class="v">{"loaded" if metrics else "not loaded"}</span></div>'
+         f'<span class="k">Truth</span><span class="v">{"loaded" if metrics else "not loaded"}</span>'
+         f'<span class="k">Allowlist</span><span class="v">{len(result.rules.get("allowlist") or [])} source(s)</span></div>'
          if times else '<div class="side-h">Dataset</div><div class="muted">No events parsed.</div>')
     st.divider()
     html('<div class="side-h">Report</div>')
@@ -512,5 +516,6 @@ with tab_eval:
                        '<th style="text-align:right">Detected</th><th style="text-align:right">Median TTD</th>'
                        f'<th>Best verdicts</th></tr></thead><tbody>{rows}</tbody></table>',
                        "TTD in log time (batch)"))
-        st.caption("Labelled synthetic dataset: a controlled benchmark, not real-world performance. "
-                   "The verifier never reads the ground truth; only the evaluation does.")
+        st.caption("These numbers describe the loaded labelled dataset only, not real-world performance. "
+                   "The verifier never reads the ground truth; only the evaluation does. "
+                   "Sources on the operator allowlist are judged Noise, which raises precision.")
